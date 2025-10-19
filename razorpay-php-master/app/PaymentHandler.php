@@ -91,7 +91,7 @@ class PaymentHandler {
             ]);
 
             // Update payment status in database
-            $this->db->update('payments', 
+            $this->db->update('payments',
                 [
                     'razorpay_payment_id' => $paymentId,
                     'razorpay_signature' => $signature,
@@ -99,7 +99,7 @@ class PaymentHandler {
                     'updated_at' => date('Y-m-d H:i:s')
                 ],
                 'razorpay_order_id = ?',
-                [$orderId]
+                [$orderId]  // Parameters for WHERE clause
             );
 
             return [

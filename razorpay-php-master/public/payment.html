@@ -1,445 +1,521 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Razorpay Payment Gateway - Payment</title>
     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            padding: 20px;
-        }
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        padding: 20px;
+      }
 
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
+      .container {
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      .header {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .header h1 {
+        color: #333;
+        font-size: 24px;
+      }
+
+      .user-info {
+        text-align: right;
+      }
+
+      .user-info p {
+        color: #666;
+        margin-bottom: 10px;
+      }
+
+      .logout-btn {
+        background: #e74c3c;
+        color: white;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: 600;
+      }
+
+      .logout-btn:hover {
+        background: #c0392b;
+      }
+
+      .content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+
+      .card {
+        background: white;
+        border-radius: 10px;
+        padding: 30px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .card h2 {
+        color: #333;
+        margin-bottom: 20px;
+        font-size: 20px;
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 8px;
+        color: #555;
+        font-weight: 500;
+      }
+
+      input,
+      textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 14px;
+        font-family: inherit;
+      }
+
+      input:focus,
+      textarea:focus {
+        outline: none;
+        border-color: #667eea;
+        box-shadow: 0 0 5px rgba(102, 126, 234, 0.3);
+      }
+
+      button {
+        width: 100%;
+        padding: 12px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: transform 0.2s;
+      }
+
+      button:hover {
+        transform: translateY(-2px);
+      }
+
+      button:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+      }
+
+      .message {
+        padding: 12px;
+        border-radius: 5px;
+        margin-bottom: 20px;
+        display: none;
+      }
+
+      .message.success {
+        background-color: #d4edda;
+        color: #155724;
+        border: 1px solid #c3e6cb;
+        display: block;
+      }
+
+      .message.error {
+        background-color: #f8d7da;
+        color: #721c24;
+        border: 1px solid #f5c6cb;
+        display: block;
+      }
+
+      .loading {
+        display: none;
+        text-align: center;
+        color: #667eea;
+      }
+
+      .spinner {
+        border: 3px solid #f3f3f3;
+        border-top: 3px solid #667eea;
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        animation: spin 1s linear infinite;
+        display: inline-block;
+        margin-right: 10px;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      .payment-history {
+        max-height: 400px;
+        overflow-y: auto;
+      }
+
+      .payment-item {
+        background: #f9f9f9;
+        padding: 15px;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        border-left: 4px solid #667eea;
+      }
+
+      .payment-item p {
+        margin: 5px 0;
+        color: #555;
+        font-size: 14px;
+      }
+
+      .payment-item strong {
+        color: #333;
+      }
+
+      .status-badge {
+        display: inline-block;
+        padding: 4px 8px;
+        border-radius: 3px;
+        font-size: 12px;
+        font-weight: 600;
+      }
+
+      .status-completed {
+        background: #d4edda;
+        color: #155724;
+      }
+
+      .status-pending {
+        background: #fff3cd;
+        color: #856404;
+      }
+
+      .status-failed {
+        background: #f8d7da;
+        color: #721c24;
+      }
+
+      @media (max-width: 768px) {
+        .content {
+          grid-template-columns: 1fr;
         }
 
         .header {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .header h1 {
-            color: #333;
-            font-size: 24px;
+          flex-direction: column;
+          text-align: center;
         }
 
         .user-info {
-            text-align: right;
+          text-align: center;
+          margin-top: 15px;
         }
-
-        .user-info p {
-            color: #666;
-            margin-bottom: 10px;
-        }
-
-        .logout-btn {
-            background: #e74c3c;
-            color: white;
-            border: none;
-            padding: 8px 16px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: 600;
-        }
-
-        .logout-btn:hover {
-            background: #c0392b;
-        }
-
-        .content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-
-        .card {
-            background: white;
-            border-radius: 10px;
-            padding: 30px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .card h2 {
-            color: #333;
-            margin-bottom: 20px;
-            font-size: 20px;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 8px;
-            color: #555;
-            font-weight: 500;
-        }
-
-        input, textarea {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 14px;
-            font-family: inherit;
-        }
-
-        input:focus, textarea:focus {
-            outline: none;
-            border-color: #667eea;
-            box-shadow: 0 0 5px rgba(102, 126, 234, 0.3);
-        }
-
-        button {
-            width: 100%;
-            padding: 12px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: transform 0.2s;
-        }
-
-        button:hover {
-            transform: translateY(-2px);
-        }
-
-        button:disabled {
-            opacity: 0.6;
-            cursor: not-allowed;
-        }
-
-        .message {
-            padding: 12px;
-            border-radius: 5px;
-            margin-bottom: 20px;
-            display: none;
-        }
-
-        .message.success {
-            background-color: #d4edda;
-            color: #155724;
-            border: 1px solid #c3e6cb;
-            display: block;
-        }
-
-        .message.error {
-            background-color: #f8d7da;
-            color: #721c24;
-            border: 1px solid #f5c6cb;
-            display: block;
-        }
-
-        .loading {
-            display: none;
-            text-align: center;
-            color: #667eea;
-        }
-
-        .spinner {
-            border: 3px solid #f3f3f3;
-            border-top: 3px solid #667eea;
-            border-radius: 50%;
-            width: 20px;
-            height: 20px;
-            animation: spin 1s linear infinite;
-            display: inline-block;
-            margin-right: 10px;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        .payment-history {
-            max-height: 400px;
-            overflow-y: auto;
-        }
-
-        .payment-item {
-            background: #f9f9f9;
-            padding: 15px;
-            border-radius: 5px;
-            margin-bottom: 10px;
-            border-left: 4px solid #667eea;
-        }
-
-        .payment-item p {
-            margin: 5px 0;
-            color: #555;
-            font-size: 14px;
-        }
-
-        .payment-item strong {
-            color: #333;
-        }
-
-        .status-badge {
-            display: inline-block;
-            padding: 4px 8px;
-            border-radius: 3px;
-            font-size: 12px;
-            font-weight: 600;
-        }
-
-        .status-completed {
-            background: #d4edda;
-            color: #155724;
-        }
-
-        .status-pending {
-            background: #fff3cd;
-            color: #856404;
-        }
-
-        .status-failed {
-            background: #f8d7da;
-            color: #721c24;
-        }
-
-        @media (max-width: 768px) {
-            .content {
-                grid-template-columns: 1fr;
-            }
-
-            .header {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .user-info {
-                text-align: center;
-                margin-top: 15px;
-            }
-        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <div class="header">
-            <h1>💳 Razorpay Payment Gateway</h1>
-            <div class="user-info">
-                <p>Welcome, <strong id="userName">User</strong></p>
-                <button class="logout-btn" onclick="logout()">Logout</button>
+      <div class="header">
+        <h1>💳 Razorpay Payment Gateway</h1>
+        <div class="user-info">
+          <p>Welcome, <strong id="userName">User</strong></p>
+          <button class="logout-btn" onclick="logout()">Logout</button>
+        </div>
+      </div>
+
+      <div class="content">
+        <!-- Payment Form -->
+        <div class="card">
+          <h2>Make a Payment</h2>
+          <div id="paymentMessage" class="message"></div>
+
+          <form onsubmit="handlePayment(event)">
+            <div class="form-group">
+              <label for="amount">Amount (INR)</label>
+              <input
+                type="number"
+                id="amount"
+                min="1"
+                step="0.01"
+                required
+                placeholder="Enter amount"
+              />
             </div>
+            <div class="form-group">
+              <label for="description">Description (Optional)</label>
+              <textarea
+                id="description"
+                rows="3"
+                placeholder="Enter payment description"
+              ></textarea>
+            </div>
+            <div class="loading" id="paymentLoading">
+              <span class="spinner"></span> Processing...
+            </div>
+            <button type="submit" id="paymentBtn">Pay Now</button>
+          </form>
         </div>
 
-        <div class="content">
-            <!-- Payment Form -->
-            <div class="card">
-                <h2>Make a Payment</h2>
-                <div id="paymentMessage" class="message"></div>
-                
-                <form onsubmit="handlePayment(event)">
-                    <div class="form-group">
-                        <label for="amount">Amount (INR)</label>
-                        <input type="number" id="amount" min="1" step="0.01" required placeholder="Enter amount">
-                    </div>
-                    <div class="form-group">
-                        <label for="description">Description (Optional)</label>
-                        <textarea id="description" rows="3" placeholder="Enter payment description"></textarea>
-                    </div>
-                    <div class="loading" id="paymentLoading">
-                        <span class="spinner"></span> Processing...
-                    </div>
-                    <button type="submit" id="paymentBtn">Pay Now</button>
-                </form>
-            </div>
-
-            <!-- Payment History -->
-            <div class="card">
-                <h2>Payment History</h2>
-                <div id="paymentHistory" class="payment-history">
-                    <p style="text-align: center; color: #999;">Loading payments...</p>
-                </div>
-            </div>
+        <!-- Payment History -->
+        <div class="card">
+          <h2>Payment History</h2>
+          <div id="paymentHistory" class="payment-history">
+            <p style="text-align: center; color: #999">Loading payments...</p>
+          </div>
         </div>
+      </div>
     </div>
 
     <script>
-        let currentUser = null;
-        let razorpayKeyId = '';
+      let currentUser = null;
+      let razorpayKeyId = "";
 
-        async function checkAuth() {
-            try {
-                const response = await fetch('../api/auth.php?action=check');
-                const data = await response.json();
-                
-                if (!data.logged_in) {
-                    window.location.href = 'auth.html';
-                } else {
-                    currentUser = data.user;
-                    document.getElementById('userName').textContent = currentUser.name;
-                    loadPaymentHistory();
-                }
-            } catch (error) {
-                console.error('Auth check failed:', error);
-                window.location.href = 'auth.html';
-            }
+      // Check authentication on page load
+      async function checkAuth() {
+        try {
+          const response = await fetch("../api/auth.php?action=check", {
+            method: "GET",
+            credentials: "same-origin",
+            headers: {
+              Accept: "application/json",
+            },
+          });
+
+          if (!response.ok) {
+            throw new Error("Authentication check failed");
+          }
+
+          const data = await response.json();
+
+          if (!data.logged_in) {
+            // User not authenticated - redirect to login
+            console.warn("User not authenticated. Redirecting to login page.");
+            window.location.href = "auth.html?redirect=payment";
+            return;
+          }
+
+          // User is authenticated
+          currentUser = data.user;
+          if (currentUser && currentUser.name) {
+            document.getElementById("userName").textContent = currentUser.name;
+          }
+
+          // Load payment history
+          loadPaymentHistory();
+        } catch (error) {
+          console.error("Authentication check failed:", error);
+          // Redirect to login on error
+          window.location.href = "auth.html?redirect=payment";
+        }
+      }
+
+      async function handlePayment(event) {
+        event.preventDefault();
+
+        const amount = parseFloat(document.getElementById("amount").value);
+        const description = document.getElementById("description").value;
+        const loading = document.getElementById("paymentLoading");
+        const btn = document.getElementById("paymentBtn");
+
+        if (amount <= 0) {
+          showMessage("paymentMessage", "Please enter a valid amount", "error");
+          return;
         }
 
-        async function handlePayment(event) {
-            event.preventDefault();
-            
-            const amount = parseFloat(document.getElementById('amount').value);
-            const description = document.getElementById('description').value;
-            const loading = document.getElementById('paymentLoading');
-            const btn = document.getElementById('paymentBtn');
+        loading.style.display = "block";
+        btn.disabled = true;
 
-            if (amount <= 0) {
-                showMessage('paymentMessage', 'Please enter a valid amount', 'error');
-                return;
+        try {
+          // Create order
+          const orderResponse = await fetch(
+            "../api/payment.php?action=create_order",
+            {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({ amount, description }),
             }
+          );
 
-            loading.style.display = 'block';
-            btn.disabled = true;
+          const orderData = await orderResponse.json();
 
-            try {
-                // Create order
-                const orderResponse = await fetch('../api/payment.php?action=create_order', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({ amount, description })
-                });
+          if (!orderData.success) {
+            throw new Error(orderData.message || "Failed to create order");
+          }
 
-                const orderData = await orderResponse.json();
+          razorpayKeyId = orderData.key_id;
 
-                if (!orderData.success) {
-                    throw new Error(orderData.message || 'Failed to create order');
-                }
+          // Open Razorpay checkout
+          const options = {
+            key: orderData.key_id,
+            amount: amount * 100,
+            currency: orderData.currency,
+            name: "Payment Gateway",
+            description: description || "Payment for services",
+            order_id: orderData.order_id,
+            handler: function (response) {
+              verifyPayment(
+                orderData.order_id,
+                response.razorpay_payment_id,
+                response.razorpay_signature
+              );
+            },
+            prefill: {
+              name: currentUser.name,
+              email: currentUser.email,
+            },
+            theme: {
+              color: "#667eea",
+            },
+          };
 
-                razorpayKeyId = orderData.key_id;
-
-                // Open Razorpay checkout
-                const options = {
-                    key: orderData.key_id,
-                    amount: amount * 100,
-                    currency: orderData.currency,
-                    name: 'Payment Gateway',
-                    description: description || 'Payment for services',
-                    order_id: orderData.order_id,
-                    handler: function(response) {
-                        verifyPayment(orderData.order_id, response.razorpay_payment_id, response.razorpay_signature);
-                    },
-                    prefill: {
-                        name: currentUser.name,
-                        email: currentUser.email
-                    },
-                    theme: {
-                        color: '#667eea'
-                    }
-                };
-
-                const rzp = new Razorpay(options);
-                rzp.open();
-            } catch (error) {
-                showMessage('paymentMessage', 'Error: ' + error.message, 'error');
-            } finally {
-                loading.style.display = 'none';
-                btn.disabled = false;
-            }
+          const rzp = new Razorpay(options);
+          rzp.open();
+        } catch (error) {
+          showMessage("paymentMessage", "Error: " + error.message, "error");
+        } finally {
+          loading.style.display = "none";
+          btn.disabled = false;
         }
+      }
 
-        async function verifyPayment(orderId, paymentId, signature) {
-            try {
-                const response = await fetch('../api/payment.php?action=verify_payment', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({ order_id: orderId, payment_id: paymentId, signature })
-                });
-
-                const data = await response.json();
-
-                if (data.success) {
-                    showMessage('paymentMessage', 'Payment successful! ✓', 'success');
-                    document.getElementById('amount').value = '';
-                    document.getElementById('description').value = '';
-                    setTimeout(() => {
-                        loadPaymentHistory();
-                    }, 1000);
-                } else {
-                    showMessage('paymentMessage', 'Payment verification failed: ' + data.message, 'error');
-                }
-            } catch (error) {
-                showMessage('paymentMessage', 'Verification error: ' + error.message, 'error');
+      async function verifyPayment(orderId, paymentId, signature) {
+        try {
+          const response = await fetch(
+            "../api/payment.php?action=verify_payment",
+            {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({
+                order_id: orderId,
+                payment_id: paymentId,
+                signature,
+              }),
             }
+          );
+
+          const data = await response.json();
+
+          if (data.success) {
+            showMessage("paymentMessage", "Payment successful! ✓", "success");
+            document.getElementById("amount").value = "";
+            document.getElementById("description").value = "";
+            setTimeout(() => {
+              loadPaymentHistory();
+            }, 1000);
+          } else {
+            showMessage(
+              "paymentMessage",
+              "Payment verification failed: " + data.message,
+              "error"
+            );
+          }
+        } catch (error) {
+          showMessage(
+            "paymentMessage",
+            "Verification error: " + error.message,
+            "error"
+          );
         }
+      }
 
-        async function loadPaymentHistory() {
-            try {
-                const response = await fetch('../api/payment.php?action=get_user_payments');
-                const data = await response.json();
+      async function loadPaymentHistory() {
+        try {
+          const response = await fetch(
+            "../api/payment.php?action=get_user_payments"
+          );
+          const data = await response.json();
 
-                const historyDiv = document.getElementById('paymentHistory');
+          const historyDiv = document.getElementById("paymentHistory");
 
-                if (!data.success) {
-                    historyDiv.innerHTML = '<p style="color: #999;">Failed to load payments</p>';
-                    return;
-                }
+          if (!data.success) {
+            historyDiv.innerHTML =
+              '<p style="color: #999;">Failed to load payments</p>';
+            return;
+          }
 
-                if (data.payments.length === 0) {
-                    historyDiv.innerHTML = '<p style="text-align: center; color: #999;">No payments yet</p>';
-                    return;
-                }
+          if (data.payments.length === 0) {
+            historyDiv.innerHTML =
+              '<p style="text-align: center; color: #999;">No payments yet</p>';
+            return;
+          }
 
-                historyDiv.innerHTML = data.payments.map(payment => `
+          historyDiv.innerHTML = data.payments
+            .map(
+              (payment) => `
                     <div class="payment-item">
-                        <p><strong>Amount:</strong> ₹${(payment.amount).toFixed(2)}</p>
-                        <p><strong>Order ID:</strong> ${payment.razorpay_order_id}</p>
-                        <p><strong>Status:</strong> <span class="status-badge status-${payment.status}">${payment.status.toUpperCase()}</span></p>
-                        <p><strong>Date:</strong> ${new Date(payment.created_at).toLocaleString()}</p>
+                        <p><strong>Amount:</strong> ₹${payment.amount.toFixed(
+                          2
+                        )}</p>
+                        <p><strong>Order ID:</strong> ${
+                          payment.razorpay_order_id
+                        }</p>
+                        <p><strong>Status:</strong> <span class="status-badge status-${
+                          payment.status
+                        }">${payment.status.toUpperCase()}</span></p>
+                        <p><strong>Date:</strong> ${new Date(
+                          payment.created_at
+                        ).toLocaleString()}</p>
                     </div>
-                `).join('');
-            } catch (error) {
-                console.error('Failed to load payment history:', error);
-                document.getElementById('paymentHistory').innerHTML = '<p style="color: #999;">Error loading payments</p>';
-            }
+                `
+            )
+            .join("");
+        } catch (error) {
+          console.error("Failed to load payment history:", error);
+          document.getElementById("paymentHistory").innerHTML =
+            '<p style="color: #999;">Error loading payments</p>';
         }
+      }
 
-        function showMessage(elementId, message, type) {
-            const element = document.getElementById(elementId);
-            element.textContent = message;
-            element.className = 'message ' + type;
+      function showMessage(elementId, message, type) {
+        const element = document.getElementById(elementId);
+        element.textContent = message;
+        element.className = "message " + type;
+      }
+
+      async function logout() {
+        try {
+          await fetch("../api/auth.php?action=logout");
+          window.location.href = "auth.html";
+        } catch (error) {
+          console.error("Logout failed:", error);
         }
+      }
 
-        async function logout() {
-            try {
-                await fetch('../api/auth.php?action=logout');
-                window.location.href = 'auth.html';
-            } catch (error) {
-                console.error('Logout failed:', error);
-            }
-        }
-
-        // Initialize
-        checkAuth();
+      // Initialize
+      checkAuth();
     </script>
-</body>
+  </body>
 </html>
-

@@ -78,11 +78,22 @@ class Database {
         return $this->db->lastInsertId();
     }
 
-    public function update($table, $data, $where) {
+    public function update($table, $data, $where, $params = []) {
+        // Validate table name (prevent SQL injection)
+        if (!preg_match('/^[a-zA-Z_][a-zA-Z0-9_]*$/', $table)) {
+            throw new Exception('Invalid table name');
+        }
+
+        // Build SET clause with placeholders
         $set = implode(', ', array_map(function($key) { return "$key = ?"; }, array_keys($data)));
+
+        // Build complete SQL query
         $sql = "UPDATE $table SET $set WHERE $where";
-        
-        return $this->query($sql, array_values($data));
+
+        // Merge data values with where parameters
+        $allParams = array_merge(array_values($data), $params);
+
+        return $this->query($sql, $allParams);
     }
 
     public function select($table, $where = '', $params = []) {
