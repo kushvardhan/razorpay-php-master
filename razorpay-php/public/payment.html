@@ -360,6 +360,7 @@
             "../api/payment.php?action=create_order",
             {
               method: "POST",
+              credentials: "same-origin",
               headers: {
                 "Content-Type": "application/json",
               },
@@ -415,6 +416,7 @@
             "../api/payment.php?action=verify_payment",
             {
               method: "POST",
+              credentials: "same-origin",
               headers: {
                 "Content-Type": "application/json",
               },
@@ -454,7 +456,14 @@
       async function loadPaymentHistory() {
         try {
           const response = await fetch(
-            "../api/payment.php?action=get_user_payments"
+            "../api/payment.php?action=get_user_payments",
+            {
+              method: "GET",
+              credentials: "same-origin",
+              headers: {
+                Accept: "application/json",
+              },
+            }
           );
           const data = await response.json();
 
@@ -507,7 +516,13 @@
 
       async function logout() {
         try {
-          await fetch("../api/auth.php?action=logout");
+          await fetch("../api/auth.php?action=logout", {
+            method: "GET",
+            credentials: "same-origin",
+            headers: {
+              Accept: "application/json",
+            },
+          });
           window.location.href = "auth.html";
         } catch (error) {
           console.error("Logout failed:", error);
