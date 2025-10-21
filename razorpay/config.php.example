@@ -1,0 +1,5 @@
+<?php
+// Razorpay API keys (test keys for example)
+define('RAZOR_KEY_ID', 'rzp_test_xxxxxxxxxxxxx');
+define('RAZOR_KEY_SECRET', 'xxxxxxxxxxxxxxxxxxxx');
+// Copy this file to config.php and add your real keys. Do NOT commit secrets.
