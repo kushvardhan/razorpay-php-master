@@ -30,15 +30,49 @@ if (!isset($_SESSION['user_id'])) {
     </header>
     <!-- Payment Section -->
     <main class="container mx-auto py-12">
-        <div class="max-w-md mx-auto bg-white p-8 rounded-lg shadow-lg">
+        <div class="max-w-lg mx-auto bg-white p-8 rounded-lg shadow-lg">
             <h2 class="text-2xl font-bold text-[#1a237e] mb-4 text-center">Make a Donation</h2>
             <p class="text-center text-sm text-gray-600 mb-6">All donations are processed securely via Razorpay. Your support makes a difference!</p>
-            <form id="pay-form" class="space-y-4">
-                <label class="block text-sm font-medium text-[#1a237e]">Amount (INR)</label>
-                <input type="number" id="amount" name="amount" min="1" required class="w-full p-3 border border-yellow-400 rounded mb-2" placeholder="Enter amount">
-                <button type="submit" id="pay-btn" class="w-full bg-yellow-400 text-[#1a237e] font-bold py-3 rounded-full hover:bg-yellow-300 transition">Pay Now</button>
+            <form id="donate-form" class="space-y-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium text-[#1a237e]">Name</label>
+                        <input type="text" id="donor-name" name="name" required class="w-full p-3 border border-yellow-400 rounded" placeholder="Your Name">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-[#1a237e]">Email</label>
+                        <input type="email" id="donor-email" name="email" required class="w-full p-3 border border-yellow-400 rounded" placeholder="Your Email">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-[#1a237e]">Country</label>
+                    <input type="text" id="donor-country" name="country" required class="w-full p-3 border border-yellow-400 rounded" placeholder="Your Country">
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium text-[#1a237e]">Amount</label>
+                        <input type="number" id="donation-amount" name="amount" min="1" required class="w-full p-3 border border-yellow-400 rounded" placeholder="Amount">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-[#1a237e]">Currency</label>
+                        <select id="donation-currency" name="currency" class="w-full p-3 border border-yellow-400 rounded">
+                            <option value="INR" selected>INR</option>
+                            <option value="USD">USD</option>
+                            <option value="EUR">EUR</option>
+                        </select>
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-[#1a237e]">Message (optional)</label>
+                    <textarea id="donation-message" name="message" class="w-full p-3 border border-yellow-400 rounded" placeholder="Your message"></textarea>
+                </div>
+                <div class="flex items-center">
+                    <input type="checkbox" id="recurring" name="recurring" class="mr-2">
+                    <label for="recurring" class="text-sm text-[#1a237e]">Make this a recurring donation</label>
+                </div>
+                <button type="submit" id="pay-btn" class="w-full bg-yellow-400 text-[#1a237e] font-bold py-3 rounded-full hover:bg-yellow-300 transition">Donate Now</button>
+                <div id="error-msg" class="text-red-500 text-sm mt-4 hidden"></div>
             </form>
-            <div id="error-msg" class="text-red-500 text-sm mt-4 hidden"></div>
         </div>
     </main>
     <!-- Footer -->
@@ -53,13 +87,19 @@ if (!isset($_SESSION['user_id'])) {
     </footer>
     <script>
     const razorKey = "<?php echo htmlspecialchars(RAZOR_KEY_ID); ?>";
-    document.getElementById('pay-form').addEventListener('submit', async function(e) {
+    document.getElementById('donate-form').addEventListener('submit', async function(e) {
         e.preventDefault();
-        const amount = document.getElementById('amount').value;
+        const name = document.getElementById('donor-name').value.trim();
+        const email = document.getElementById('donor-email').value.trim();
+        const country = document.getElementById('donor-country').value.trim();
+        const amount = document.getElementById('donation-amount').value;
+        const currency = document.getElementById('donation-currency').value;
+        const message = document.getElementById('donation-message').value.trim();
+        const recurring = document.getElementById('recurring').checked ? 1 : 0;
         const errorMsg = document.getElementById('error-msg');
         errorMsg.classList.add('hidden');
-        if (!amount || isNaN(amount) || amount <= 0) {
-            errorMsg.textContent = 'Please enter a valid amount.';
+        if (!name || !email || !country || !amount || isNaN(amount) || amount <= 0) {
+            errorMsg.textContent = 'Please fill all required fields and enter a valid amount.';
             errorMsg.classList.remove('hidden');
             return;
         }
@@ -67,7 +107,13 @@ if (!isset($_SESSION['user_id'])) {
             const res = await fetch('/create_order.php', {
                 method: 'POST',
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-                body: 'amount=' + encodeURIComponent(amount)
+                body: 'amount=' + encodeURIComponent(amount) +
+                      '&currency=' + encodeURIComponent(currency) +
+                      '&name=' + encodeURIComponent(name) +
+                      '&email=' + encodeURIComponent(email) +
+                      '&country=' + encodeURIComponent(country) +
+                      '&message=' + encodeURIComponent(message) +
+                      '&recurring=' + encodeURIComponent(recurring)
             });
             if (!res.ok) throw new Error('Order creation failed');
             const data = await res.json();
@@ -79,8 +125,14 @@ if (!isset($_SESSION['user_id'])) {
             const options = {
                 key: razorKey,
                 amount: data.amount,
-                currency: "INR",
+                currency: currency,
                 order_id: data.order_id,
+                name: name,
+                description: message,
+                prefill: {
+                    name: name,
+                    email: email
+                },
                 handler: function (response){
                     fetch('/verify.php', {
                         method: 'POST',
