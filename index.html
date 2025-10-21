@@ -1,841 +1,315 @@
-<!doctype html>
-<html class="no-js" lang="zxx">
-
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cambridge Public Education and Welfare Trust</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="cpeduw-Photoroom.png" />
+    <!-- Tailwind CSS CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
 
-    <!-- <link rel="manifest" href="site.webmanifest"> -->
-    <link rel="shortcut icon" type="image/x-icon" href="cpeduw-Photoroom.png">
-    <!-- Place favicon.ico in the root directory -->
-
-    <!-- CSS here -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/themify-icons.css">
-    <link rel="stylesheet" href="css/nice-select.css">
-    <link rel="stylesheet" href="css/flaticon.css">
-    <link rel="stylesheet" href="css/gijgo.css">
-    <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" href="css/slicknav.css">
-    <link rel="stylesheet" href="css/style.css">
-    <!-- <link rel="stylesheet" href="css/responsive.css"> -->
-</head>
-
-<body>
-    <!--[if lte IE 9]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-        <![endif]-->
-
-
-    <!-- header-start -->
-    <header style="background: linear-gradient(90deg, #1a237e 60%, #ffd600 100%); color: #fff;">
-        <div class="header-area">
-            <div class="header-top_area">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-xl-6 col-md-12 col-lg-8">
-                            <div class="short_contact_list">
-                                <ul>
-                                    <li><a href="#" style="color:#fff"> <i class="fa fa-phone"></i> +91 98765 43210</a></li>
-                                    <li><a href="#" style="color:#fff"> <i class="fa fa-envelope"></i>info@cambridgepublictrust.org</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-xl-6 col-md-6 col-lg-4">
-                            <div class="social_media_links d-none d-lg-block">
-                                <a href="#" style="color:#ffd600"><i class="fa fa-facebook"></i></a>
-                                <a href="#" style="color:#ffd600"><i class="fa fa-linkedin"></i></a>
-                                <a href="#" style="color:#ffd600"><i class="fa fa-twitter"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="sticky-header" class="main-header-area">
-                <div class="container-fluid">
-                    <div class="row align-items-center">
-                        <div class="col-xl-3 col-lg-3">
-                            <div class="logo">
-                                <a href="index.html">
-                                    <img src="cpeduw-Photoroom.png" alt="Cambridge Public Education and Welfare Trust" style="height:70px;">
-                                </a>
-                                <span style="font-size:1.2em;font-weight:bold;color:#1a237e;display:block;margin-top:8px;">Cambridge Public Education and Welfare Trust</span>
-                                <span style="font-size:1em;color:#ffd600;display:block;">Empowering Education, Enabling Futures</span>
-                            </div>
-                        </div>
-                        <div class="col-xl-9 col-lg-9">
-                            <div class="main-menu">
-                                <nav>
-                                    <ul id="navigation">
-                                        <li><a href="index.html">Home</a></li>
-                                        <li><a href="About.html">About Us</a></li>
-                                        <li><a href="#">Programs <i class="ti-angle-down"></i></a>
-                                            <ul class="submenu">
-                                                <li><a href="Cause.html">Our Causes</a></li>
-                                                <li><a href="blog.html">Blog</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="contact.html">Contact</a></li>
-                                        <li><a href="login.php">Login</a></li>
-                                        <li><a href="register.php">Register</a></li>
-                                    </ul>
-                                </nav>
-                                <div class="Appointment">
-                                    <div class="book_btn d-none d-lg-block">
-                                        <a data-scroll-nav='1' href="#donate" style="background:#ffd600;color:#1a237e;font-weight:bold;border-radius:30px;padding:10px 30px;box-shadow:0 2px 8px rgba(26,35,126,0.1);">Donate Now</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="mobile_menu d-block d-lg-none"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+  <body class="bg-gray-50 text-gray-900">
+    <!-- Header & Navbar -->
+    <header class="bg-[#1a237e] text-white">
+      <div
+        class="container mx-auto flex flex-col md:flex-row items-center justify-between py-4"
+      >
+        <div class="flex items-center gap-4">
+          <img
+            src="cpeduw-Photoroom.png"
+            alt="Trust Logo"
+            class="h-16 w-16 rounded-lg shadow-lg"
+          />
+          <div>
+            <h1 class="text-xl md:text-2xl font-bold">
+              CAMBRIDGE PUBLIC EDUCATION AND WELFARE TRUST
+            </h1>
+            <p class="text-yellow-400 font-semibold">
+              Empowering Education, Enabling Futures
+            </p>
+          </div>
         </div>
+        <nav class="mt-4 md:mt-0">
+          <ul class="flex flex-wrap gap-6 text-base font-medium">
+            <li><a href="index.html" class="hover:text-yellow-400">Home</a></li>
+            <li>
+              <a href="About.html" class="hover:text-yellow-400">About</a>
+            </li>
+            <li>
+              <a href="Projects.html" class="hover:text-yellow-400">Projects</a>
+            </li>
+            <li>
+              <a href="Donate.html" class="hover:text-yellow-400">Donate</a>
+            </li>
+            <li>
+              <a href="Contact.html" class="hover:text-yellow-400">Contact</a>
+            </li>
+            <li><a href="login.php" class="hover:text-yellow-400">Login</a></li>
+            <li>
+              <a href="register.php" class="hover:text-yellow-400">Register</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </header>
-    <!-- header-end -->
 
-    <!-- slider_area_start -->
-    <div class="slider_area">
-        <div class="single_slider  d-flex align-items-center slider_bg_1 overlay2">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-9">
-                        <div class="slider_text ">
-                            <span>Get Started Today.</span>
-                            <h3> Help the children
-                                When They Need</h3>
-                            <p>With so much to consume and such little time, coming up <br>
-                                with relevant title ideas is essential</p>
-                            <a href="About.html" class="boxed-btn3">Learn More
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!-- Hero Section -->
+    <section class="bg-[#1a237e] text-white py-16">
+      <div
+        class="container mx-auto flex flex-col md:flex-row items-center gap-8"
+      >
+        <div class="md:w-1/2">
+          <h2 class="text-4xl font-bold mb-4">
+            Empowering Education, Enabling Futures
+          </h2>
+          <p class="mb-6 text-lg">
+            Join us in transforming lives through quality education for every
+            child in India.
+          </p>
+          <a
+            href="#donate"
+            class="bg-yellow-400 text-[#1a237e] font-bold py-3 px-8 rounded-full shadow hover:bg-yellow-300 transition"
+            >Donate Now</a
+          >
         </div>
-    </div>
-    <!-- slider_area_end -->
+        <div class="md:w-1/2">
+          <img
+            src="img/hero-indian-children.jpg"
+            alt="Indian Children Learning"
+            class="rounded-lg shadow-lg w-full h-64 object-cover"
+          />
+        </div>
+      </div>
+    </section>
 
-    <!-- reson_area_start  -->
-    <div class="reson_area section_padding">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-6">
-                    <div class="section_title text-center mb-55">
-                        <h3><span>Reason of Helping</span></h3>
-                    </div>
-                </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-4 col-md-6">
-                    <div class="single_reson">
-                        <div class="thum">
-                            <div class="thum_1">
-                                <img src="img/help/1.png" alt="">
-                            </div>
-                        </div>
-                        <div class="help_content">
-                            <h4>Collecting Fund</h4>
-                            <p>Lorem ipsum, or lipsum as it is 
-                                sometimes known, is dummy 
-                                text used in laying out print.</p>
-                            <a href="#" class="read_more">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single_reson">
-                        <div class="thum">
-                            <div class="thum_1">
-                                <img src="img/help/2.png" alt="">
-                            </div>
-                        </div>
-                        <div class="help_content">
-                            <h4>Blood Camp</h4>
-                            <p>Lorem ipsum, or lipsum as it is 
-                                sometimes known, is dummy 
-                                text used in laying out print.</p>
-                            <a href="#" class="read_more">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single_reson">
-                        <div class="thum">
-                            <div class="thum_1">
-                                <img src="img/help/3.png" alt="">
-                            </div>
-                        </div>
-                        <div class="help_content">
-                            <h4>Friendly Volunteer</h4>
-                            <p>Lorem ipsum, or lipsum as it is 
-                                sometimes known, is dummy 
-                                text used in laying out print.</p>
-                            <a href="#" class="read_more">Read More</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!-- Mission & Impact Section -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto text-center">
+        <h3 class="text-2xl font-bold text-[#1a237e] mb-4">Our Mission</h3>
+        <p class="max-w-2xl mx-auto mb-8 text-lg">
+          To provide quality education and welfare support to underprivileged
+          children in Bihar, India. Registered as a charitable public trust, we
+          are committed to building a brighter future for every child.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="bg-yellow-50 p-6 rounded-lg shadow">
+            <h4 class="text-xl font-bold text-[#1a237e] mb-2">Trust Goals</h4>
+            <ul class="text-left list-disc list-inside text-gray-700">
+              <li>Access to quality education</li>
+              <li>Welfare programs for children</li>
+              <li>Community empowerment</li>
+            </ul>
+          </div>
+          <div class="bg-yellow-50 p-6 rounded-lg shadow">
+            <h4 class="text-xl font-bold text-[#1a237e] mb-2">Achievements</h4>
+            <ul class="text-left list-disc list-inside text-gray-700">
+              <li>500+ children supported</li>
+              <li>10+ schools partnered</li>
+              <li>Numerous successful projects</li>
+            </ul>
+          </div>
+          <div class="bg-yellow-50 p-6 rounded-lg shadow">
+            <h4 class="text-xl font-bold text-[#1a237e] mb-2">
+              Official Registration
+            </h4>
+            <ul class="text-left list-disc list-inside text-gray-700">
+              <li>Govt. of Bihar, Sub Registry Office, Darbhanga</li>
+              <li>Deed No.: 61, Book No.: 4</li>
+              <li>Registered: 15/07/2014</li>
+            </ul>
+          </div>
         </div>
-    </div>
-    <!-- reson_area_end  -->
+      </div>
+    </section>
 
-    <!-- latest_activites_area_start  -->
-    <div class="latest_activites_area">
-        <div class=" video_bg_1 video_activite  d-flex align-items-center justify-content-center">
-            <a class="popup-video" href="https://www.youtube.com/watch?v=MG3jGHnBVQs">
-                <i class="flaticon-ui"></i>
-            </a>
+    <!-- Projects Grid -->
+    <section class="py-16 bg-gray-100">
+      <div class="container mx-auto">
+        <h3 class="text-2xl font-bold text-[#1a237e] mb-8 text-center">
+          Our Projects
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="bg-white rounded-lg shadow p-4">
+            <img
+              src="img/projects/education-camp.jpg"
+              alt="Education Camp"
+              class="rounded-lg h-40 w-full object-cover mb-4"
+            />
+            <h4 class="text-lg font-bold text-[#1a237e] mb-2">
+              Education Camp
+            </h4>
+            <p>Free learning camps for rural children in Darbhanga.</p>
+          </div>
+          <div class="bg-white rounded-lg shadow p-4">
+            <img
+              src="img/projects/school-renovation.jpg"
+              alt="School Renovation"
+              class="rounded-lg h-40 w-full object-cover mb-4"
+            />
+            <h4 class="text-lg font-bold text-[#1a237e] mb-2">
+              School Renovation
+            </h4>
+            <p>
+              Renovating local schools to create better learning environments.
+            </p>
+          </div>
+          <div class="bg-white rounded-lg shadow p-4">
+            <img
+              src="img/projects/scholarship.jpg"
+              alt="Scholarship Program"
+              class="rounded-lg h-40 w-full object-cover mb-4"
+            />
+            <h4 class="text-lg font-bold text-[#1a237e] mb-2">
+              Scholarship Program
+            </h4>
+            <p>
+              Providing scholarships to meritorious students from low-income
+              families.
+            </p>
+          </div>
         </div>
-        <div class="container">
-            <div class="row justify-content-end">
-                <div class="col-lg-7">
-                    <div class="activites_info">
-                        <div class="section_title">
-                            <h3> <span>Watch Our Latest  </span><br>
-                                Activities</h3>
-                        </div>
-                        <p class="para_1">Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do 
-                            eiusmod tempor incididunt  ut labore dolore magna aliqua. 
-                            enim minim veniam, quis nostrud exercitation.</p class="para_1">
-                        <p class="para_2">Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do 
-                            eiusmod tempor incididunt  ut labore dolore magna aliqua. 
-                            enim minim veniam, quis nostrud exercitation. tempor 
-                            incididunt  ut labore dolore magna aliqua. enim minim 
-                            veniam, quis nostrud exercitation.</p>
-                        <a href="#" data-scroll-nav='1' class="boxed-btn4">Donate Now</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- latest_activites_area_end  -->
+      </div>
+    </section>
 
-    <!-- popular_causes_area_start  -->
-    <div class="popular_causes_area section_padding">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-6">
-                    <div class="section_title text-center mb-55">
-                        <h3><span>Popular Causes</span></h3>
-                    </div>
-                </div>
+    <!-- Testimonials Section -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto">
+        <h3 class="text-2xl font-bold text-[#1a237e] mb-8 text-center">
+          Testimonials
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="bg-gray-50 p-6 rounded-lg shadow flex flex-col">
+            <p class="text-lg italic mb-4">
+              “Thanks to Cambridge Trust, my daughter now attends school and
+              dreams of becoming a teacher.”
+            </p>
+            <div class="flex items-center gap-4">
+              <img
+                src="img/testimonials/mother.jpg"
+                alt="Beneficiary"
+                class="h-12 w-12 rounded-full object-cover"
+              />
+              <span class="font-bold text-[#1a237e]"
+                >Asha Devi, Beneficiary</span
+              >
             </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="causes_active owl-carousel">
-                        <div class="single_cause">
-                            <div class="thumb">
-                                <img src="img/causes/1.png" alt="">
-                            </div>
-                            <div class="causes_content">
-                                <div class="custom_progress_bar">
-                                    <div class="progress">
-                                        <div class="progress-bar" role="progressbar" style="width: 30%;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">
-                                            <span class="progres_count">
-                                                30%
-                                            </span>
-                                        </div>
-                                      </div>
-                                </div>
-                                <div class="balance d-flex justify-content-between align-items-center">
-                                    <span>Raised: $5000.00 </span>
-                                    <span>Goal: $9000.00 </span>
-                                </div>
-                                <h4>Help us to Send Food</h4>
-                                <p>The passage is attributed to an 
-                                    unknown typesetter in the century 
-                                    who is thought</p>
-                                <a class="read_more" href="cause_details.html">Read More</a>
-                            </div>
-                        </div>
-                        <div class="single_cause">
-                            <div class="thumb">
-                                <img src="img/causes/2.png" alt="">
-                            </div>
-                            <div class="causes_content">
-                                <div class="custom_progress_bar">
-                                    <div class="progress">
-                                        <div class="progress-bar" role="progressbar" style="width: 30%;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">
-                                            <span class="progres_count">
-                                                30%
-                                            </span>
-                                        </div>
-                                      </div>
-                                </div>
-                                <div class="balance d-flex justify-content-between align-items-center">
-                                    <span>Raised: $5000.00 </span>
-                                    <span>Goal: $9000.00 </span>
-                                </div>
-                                <h4>Clothes For Everyone</h4>
-                                <p>The passage is attributed to an 
-                                    unknown typesetter in the century 
-                                    who is thought</p>
-                                <a class="read_more" href="cause_details.html">Read More</a>
-                            </div>
-                        </div>
-                        <div class="single_cause">
-                            <div class="thumb">
-                                <img src="img/causes/3.png" alt="">
-                            </div>
-                            <div class="causes_content">
-                                <div class="custom_progress_bar">
-                                    <div class="progress">
-                                        <div class="progress-bar" role="progressbar" style="width: 30%;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">
-                                            <span class="progres_count">
-                                                30%
-                                            </span>
-                                        </div>
-                                      </div>
-                                </div>
-                                <div class="balance d-flex justify-content-between align-items-center">
-                                    <span>Raised: $5000.00 </span>
-                                    <span>Goal: $9000.00 </span>
-                                </div>
-                                <h4>Water For All Children</h4>
-                                <p>The passage is attributed to an 
-                                    unknown typesetter in the century 
-                                    who is thought</p>
-                                <a class="read_more" href="cause_details.html">Read More</a>
-                            </div>
-                        </div>
-                        <div class="single_cause">
-                            <div class="thumb">
-                                <img src="img/causes/1.png" alt="">
-                            </div>
-                            <div class="causes_content">
-                                <div class="custom_progress_bar">
-                                    <div class="progress">
-                                        <div class="progress-bar" role="progressbar" style="width: 30%;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">
-                                            <span class="progres_count">
-                                                30%
-                                            </span>
-                                        </div>
-                                      </div>
-                                </div>
-                                <div class="balance d-flex justify-content-between align-items-center">
-                                    <span>Raised: $5000.00 </span>
-                                    <span>Goal: $9000.00 </span>
-                                </div>
-                                <h4>Help us to Send Food</h4>
-                                <p>The passage is attributed to an 
-                                    unknown typesetter in the century 
-                                    who is thought</p>
-                                <a class="read_more" href="cause_details.html">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+          </div>
+          <div class="bg-gray-50 p-6 rounded-lg shadow flex flex-col">
+            <p class="text-lg italic mb-4">
+              “I have seen the impact of their work in my village. Truly
+              trustworthy and dedicated.”
+            </p>
+            <div class="flex items-center gap-4">
+              <img
+                src="img/testimonials/donor.jpg"
+                alt="Donor"
+                class="h-12 w-12 rounded-full object-cover"
+              />
+              <span class="font-bold text-[#1a237e]">Rahul Singh, Donor</span>
             </div>
+          </div>
         </div>
-    </div>
-    <!-- popular_causes_area_end  -->
+      </div>
+    </section>
 
-    <!-- counter_area_start  -->
-    <div class="counter_area">
-        <div class="container">
-            <div class="counter_bg overlay">
-                <div class="row">
-                    <div class="col-lg-3 col-md-6">
-                        <div class="single_counter d-flex align-items-center justify-content-center">
-                            <div class="icon">
-                                <i class="flaticon-calendar"></i>
-                            </div>
-                            <div class="events">
-                                <h3 class="counter">120</h3>
-                                <p>Finished Event</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="single_counter d-flex align-items-center justify-content-center">
-                            <div class="icon">
-                                <i class="flaticon-heart-beat"></i>
-                            </div>
-                            <div class="events">
-                                <h3 class="counter">120</h3>
-                                <p>Finished Event</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="single_counter d-flex align-items-center justify-content-center">
-                            <div class="icon">
-                                <i class="flaticon-in-love"></i>
-                            </div>
-                            <div class="events">
-                                <h3 class="counter">120</h3>
-                                <p>Finished Event</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="single_counter d-flex align-items-center justify-content-center">
-                            <div class="icon">
-                                <i class="flaticon-hug"></i>
-                            </div>
-                            <div class="events">
-                                <h3 class="counter">120</h3>
-                                <p>Finished Event</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!-- Donation Section -->
+    <section id="donate" class="py-16 bg-yellow-50">
+      <div class="container mx-auto">
+        <h3 class="text-2xl font-bold text-[#1a237e] mb-8 text-center">
+          Make a Donation
+        </h3>
+        <form
+          action="payment.php"
+          method="POST"
+          class="bg-white p-8 rounded-lg shadow-lg max-w-md mx-auto"
+        >
+          <label class="block mb-2 text-sm font-medium text-[#1a237e]"
+            >Amount (INR)</label
+          >
+          <input
+            type="number"
+            name="amount"
+            min="1"
+            required
+            class="w-full p-3 border border-yellow-400 rounded mb-4"
+          />
+          <button
+            type="submit"
+            class="w-full bg-yellow-400 text-[#1a237e] font-bold py-3 rounded-full hover:bg-yellow-300 transition"
+          >
+            Donate Now
+          </button>
+        </form>
+        <p class="text-center text-sm text-gray-600 mt-4">
+          All donations are processed securely via Razorpay. Your support makes
+          a difference!
+        </p>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#1a237e] text-white py-8 mt-16">
+      <div
+        class="container mx-auto flex flex-col md:flex-row items-center justify-between gap-8"
+      >
+        <div class="flex items-center gap-4">
+          <img
+            src="cpeduw-Photoroom.png"
+            alt="Trust Logo"
+            class="h-12 w-12 rounded-lg"
+          />
+          <div>
+            <h2 class="font-bold text-lg">
+              CAMBRIDGE PUBLIC EDUCATION AND WELFARE TRUST
+            </h2>
+            <p class="text-yellow-400 text-sm">
+              Vill. Jatpur, P.O.-Somra Baghla, P.S.-Moro, Dist.-Darbhanga,
+              Bihar, India
+            </p>
+          </div>
         </div>
-    </div>
-    <!-- counter_area_end  -->
-
-    <!-- our_volunteer_area_start  -->
-    <div class="our_volunteer_area section_padding">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-6">
-                    <div class="section_title text-center mb-55">
-                        <h3><span>Our Volunteer</span></h3>
-                    </div>
-                </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-4 col-md-6">
-                    <div class="single_volenteer">
-                        <div class="volenteer_thumb">
-                            <img src="img/volenteer/1.png" alt="">
-                        </div>
-                        <div class="voolenteer_info d-flex align-items-end">
-                            <div class="social_links">
-                                <ul>
-                                    <li>
-                                        <a href="#"> <i class="fa fa-facebook"></i> </a>
-                                    </li>
-                                    <li>
-                                        <a href="#"> <i class="fa fa-pinterest"></i> </a>
-                                    </li>
-                                    <li>
-                                        <a href="#"> <i class="fa fa-linkedin"></i> </a>
-                                    </li>
-                                    <li>
-                                        <a href="#"> <i class="fa fa-twitter"></i> </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="info_inner">
-                                <h4>Sakil khan</h4>
-                                <p>Donner</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single_volenteer">
-                        <div class="volenteer_thumb">
-                            <img src="img/volenteer/2.png" alt="">
-                        </div>
-                        <div class="voolenteer_info d-flex align-items-end">
-                            <div class="social_links">
-                                <ul>
-                                    <li>
-                                        <a href="#"> <i class="fa fa-facebook"></i> </a>
-                                    </li>
-                                    <li>
-                                        <a href="#"> <i class="fa fa-pinterest"></i> </a>
-                                    </li>
-                                    <li>
-                                        <a href="#"> <i class="fa fa-linkedin"></i> </a>
-                                    </li>
-                                    <li>
-                                        <a href="#"> <i class="fa fa-twitter"></i> </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="info_inner">
-                                <h4>Emran Ahmed</h4>
-                                <p>Volunteer</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single_volenteer">
-                        <div class="volenteer_thumb">
-                            <img src="img/volenteer/3.png" alt="">
-                        </div>
-                        <div class="voolenteer_info d-flex align-items-end">
-                            <div class="social_links">
-                                <ul>
-                                    <li>
-                                        <a href="#"> <i class="fa fa-facebook"></i> </a>
-                                    </li>
-                                    <li>
-                                        <a href="#"> <i class="fa fa-pinterest"></i> </a>
-                                    </li>
-                                    <li>
-                                        <a href="#"> <i class="fa fa-linkedin"></i> </a>
-                                    </li>
-                                    <li>
-                                        <a href="#"> <i class="fa fa-twitter"></i> </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="info_inner">
-                                <h4>Sabbir Ahmed</h4>
-                                <p>Volunteer</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="text-sm">
+          <p>
+            Registered: 11th July 2014 | Deed No.: 61, Book No.: 4 | Sub
+            Registry Office, Darbhanga, Govt. of Bihar
+          </p>
+          <p>Founder/Trustee: Md. Tabrizi (Sattler)</p>
         </div>
-    </div>
-    <!-- our_volunteer_area_end  -->
-
-    <!-- news__area_start  -->
-    <div class="news__area section_padding">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-6">
-                    <div class="section_title text-center mb-55">
-                        <h3><span>News & Updates</span></h3>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="news_active owl-carousel">
-                        <div class="single__blog d-flex align-items-center">
-                            <div class="thum">
-                                <img src="img/news/1.png" alt="">
-                            </div>
-                            <div class="newsinfo">
-                                <span>July 18, 2019</span>
-                                <a href="single-blog.html">
-                                    <h3>Pure Water Is More 
-                                        Essential</h3>
-                                </a>
-                                <p>The passage experienced a 
-                                    surge in popularity during the 
-                                    1960s when used it on their  
-                                    sheets, and again.</p>
-                                <a class="read_more" href="single-blog.html">Read More</a>
-                            </div>
-                        </div>
-                        <div class="single__blog d-flex align-items-center">
-                            <div class="thum">
-                                <img src="img/news/2.png" alt="">
-                            </div>
-                            <div class="newsinfo">
-                                <span>July 18, 2019</span>
-                                <a href="single-blog.html">
-                                    <h3>Pure Water Is More 
-                                        Essential</h3>
-                                </a>
-                                <p>The passage experienced a 
-                                    surge in popularity during the 
-                                    1960s when used it on their  
-                                    sheets, and again.</p>
-                                <a class="read_more" href="single-blog.html">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="flex gap-4">
+          <a href="#" class="hover:text-yellow-400"
+            ><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M22.675 0h-21.35C.6 0 0 .6 0 1.326v21.348C0 23.4.6 24 1.326 24h11.495v-9.294H9.691v-3.622h3.13V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.797.143v3.24l-1.918.001c-1.504 0-1.797.715-1.797 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116C23.4 24 24 23.4 24 22.674V1.326C24 .6 23.4 0 22.675 0"
+              ></path></svg
+          ></a>
+          <a href="#" class="hover:text-yellow-400"
+            ><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M19.615 3.184c-1.183-.463-2.457-.775-3.797-.775-3.179 0-5.754 2.575-5.754 5.754 0 .451.051.891.148 1.314-4.785-.24-9.032-2.534-11.872-6.022-.496.851-.779 1.841-.779 2.895 0 1.998 1.018 3.762 2.568 4.797-.946-.03-1.837-.29-2.616-.724v.073c0 2.792 1.986 5.122 4.623 5.653-.484.132-.995.203-1.522.203-.372 0-.732-.036-1.085-.104.733 2.287 2.861 3.953 5.386 3.997-1.972 1.545-4.459 2.465-7.163 2.465-.465 0-.924-.027-1.376-.08 2.553 1.638 5.584 2.594 8.844 2.594 10.613 0 16.426-8.797 16.426-16.426 0-.25-.006-.5-.018-.749 1.127-.814 2.104-1.83 2.877-2.987z"
+              ></path></svg
+          ></a>
+          <a href="#" class="hover:text-yellow-400"
+            ><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M24 4.557a9.93 9.93 0 0 1-2.828.775 4.932 4.932 0 0 0 2.165-2.724c-.951.564-2.005.974-3.127 1.195a4.916 4.916 0 0 0-8.384 4.482C7.691 8.094 4.066 6.13 1.64 3.161c-.542.929-.855 2.006-.855 3.17 0 2.188 1.115 4.117 2.813 5.254a4.904 4.904 0 0 1-2.229-.616c-.054 2.281 1.581 4.415 3.949 4.89a4.936 4.936 0 0 1-2.224.084c.627 1.956 2.444 3.377 4.6 3.417A9.867 9.867 0 0 1 0 21.543a13.94 13.94 0 0 0 7.548 2.212c9.058 0 14.009-7.513 14.009-14.009 0-.213-.005-.425-.014-.636A10.025 10.025 0 0 0 24 4.557z"
+              ></path></svg
+          ></a>
         </div>
-    </div>
-    <!-- news__area_end  -->
-
-    <div data-scroll-index='1' class="make_donation_area section_padding">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-6">
-                    <div class="section_title text-center mb-55">
-                        <h3><span>Make a Donation</span></h3>
-                    </div>
-                </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-6">
-                    <form action="#" class="donation_form">
-                        <div class="row align-items-center">
-                            <div class="col-md-4">
-                                <div class="single_amount">
-                                    <div class="input_field">
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                              <span class="input-group-text" id="basic-addon1">$</span>
-                                            </div>
-                                            <input type="text" class="form-control" placeholder="40,200" aria-label="Username" aria-describedby="basic-addon1">
-                                          </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-8">
-                                <div class="single_amount">
-                                   <div class="fixed_donat d-flex align-items-center justify-content-between">
-                                       <div class="select_prise">
-                                           <h4>Select Amount:</h4>
-                                       </div>
-                                        <div class="single_doonate"> 
-                                            <input type="radio" id="blns_1" name="radio-group" checked>
-                                            <label for="blns_1">10</label>
-                                        </div>
-                                        <div class="single_doonate"> 
-                                            <input type="radio" id="blns_2" name="radio-group" checked>
-                                            <label for="blns_2">30</label>
-                                        </div>
-                                        <div class="single_doonate"> 
-                                            <input type="radio" id="Other" name="radio-group" checked>
-                                            <label for="Other">Other</label>
-                                        </div>
-                                   </div>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    <div class="donate_now_btn text-center">
-                        <a href="#" class="boxed-btn4" id="donate-btn">Donate Now</a>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-    <!-- footer_start  -->
-    <footer class="footer">
-        <div class="footer_top">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-4 col-md-6 col-lg-4 ">
-                        <div class="footer_widget">
-                            <div class="footer_logo">
-                                <a href="#">
-                                    <img src="img/footer_logo.png" alt="">
-                                </a>
-                            </div>
-                            <p class="address_text">Lorem ipsum dolor sit amet, <br> consectetur adipiscing elit, sed do <br> eiusmod tempor incididunt ut labore.
-                            </p>
-                            <div class="socail_links">
-                                <ul>
-                                    <li>
-                                        <a href="#">
-                                            <i class="ti-facebook"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="ti-twitter-alt"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-dribbble"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-instagram"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="col-xl-2 col-md-6 col-lg-2">
-                        <div class="footer_widget">
-                            <h3 class="footer_title">
-                                Services
-                            </h3>
-                            <ul class="links">
-                                <li><a href="#">Donate</a></li>
-                                <li><a href="#">Sponsor</a></li>
-                                <li><a href="#">Fundraise</a></li>
-                                <li><a href="#">Volunteer</a></li>
-                                <li><a href="#">Partner</a></li>
-                                <li><a href="#">Jobs</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-md-6 col-lg-3">
-                        <div class="footer_widget">
-                            <h3 class="footer_title">
-                                Contacts
-                            </h3>
-                            <div class="contacts">
-                                <p>+2(305) 587-3407 <br>
-                                    info@loveuscharity.com <br>
-                                    Flat 20, Reynolds Neck, North
-                                    Helenaville, FV77 8WS
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-md-6 col-lg-3">
-                        <div class="footer_widget">
-                            <h3 class="footer_title">
-                                Top News
-                            </h3>
-                            <ul class="news_links">
-                                <li>
-                                    <div class="thumb">
-                                        <a href="#">
-                                            <img src="img/news/news_1.png" alt="">
-                                        </a>
-                                    </div>
-                                    <div class="info">
-                                        <a href="#">
-                                            <h4>School for African 
-                                                Childrens</h4>
-                                        </a>
-                                        <span>Jun 12, 2019</span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="thumb">
-                                        <a href="#">
-                                            <img src="img/news/news_2.png" alt="">
-                                        </a>
-                                    </div>
-                                    <div class="info">
-                                        <a href="#">
-                                            <h4>School for African 
-                                                Childrens</h4>
-                                        </a>
-                                        <span>Jun 12, 2019</span>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="copy-right_text">
-            <div class="container">
-                <div class="row">
-                    <div class="bordered_1px "></div>
-                    <div class="col-xl-12">
-                        <p class="copy_right text-center">
-                            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="ti-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
+      </div>
+      <div class="container mx-auto text-center mt-8 text-sm text-gray-300">
+        <p>
+          &copy; <span id="year"></span> Cambridge Public Education and Welfare
+          Trust. All rights reserved.
+        </p>
+      </div>
+      <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+      </script>
     </footer>
-    <!-- footer_end  -->
-
-    <!-- link that opens popup -->
-
-    <!-- JS here -->
-    <script src="js/vendor/modernizr-3.5.0.min.js"></script>
-    <script src="js/vendor/jquery-1.12.4.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/isotope.pkgd.min.js"></script>
-    <script src="js/ajax-form.js"></script>
-    <script src="js/waypoints.min.js"></script>
-    <script src="js/jquery.counterup.min.js"></script>
-    <script src="js/imagesloaded.pkgd.min.js"></script>
-    <script src="js/scrollIt.js"></script>
-    <script src="js/jquery.scrollUp.min.js"></script>
-    <script src="js/wow.min.js"></script>
-    <script src="js/nice-select.min.js"></script>
-    <script src="js/jquery.slicknav.min.js"></script>
-    <script src="js/jquery.magnific-popup.min.js"></script>
-    <script src="js/plugins.js"></script>
-    <script src="js/gijgo.min.js"></script>
-    <!--contact js-->
-    <script src="js/contact.js"></script>
-    <script src="js/jquery.ajaxchimp.min.js"></script>
-    <script src="js/jquery.form.js"></script>
-    <script src="js/jquery.validate.min.js"></script>
-    <script src="js/mail-script.js"></script>
-
-    <script src="js/main.js"></script>
-    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-    <script>
-    function isLoggedIn() {
-        // This should be set by backend, e.g. window.USER_ID or via cookie/session
-        return window.USER_ID && window.USER_ID !== '';
-    }
-    document.getElementById('donate-btn').addEventListener('click', function(e) {
-        e.preventDefault();
-        if (!isLoggedIn()) {
-            window.location.href = 'login.php?return_to=index.html';
-            return;
-        }
-        // Get amount from radio or input
-        var amount = 100;
-        var radios = document.querySelectorAll('input[name="radio-group"]');
-        for (var i = 0; i < radios.length; i++) {
-            if (radios[i].checked && radios[i].id !== 'Other') {
-                amount = radios[i].nextElementSibling.textContent.trim();
-            }
-        }
-        var otherInput = document.querySelector('.donation_form input.form-control');
-        if (document.getElementById('Other').checked && otherInput && otherInput.value) {
-            amount = otherInput.value.replace(/[^0-9]/g, '');
-        }
-        if (!amount || isNaN(amount) || amount <= 0) {
-            alert('Please enter a valid amount');
-            return;
-        }
-        fetch('create_order.php', {
-            method: 'POST',
-            headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-            body: 'amount=' + encodeURIComponent(amount)
-        })
-        .then(res => res.json())
-        .then(data => {
-            if (!data.order_id) {
-                alert('Order creation failed: ' + (data.error || 'Unknown error'));
-                return;
-            }
-            var options = {
-                key: window.RAZORPAY_KEY_ID || 'rzp_test_xxxxxxxxxxxxx', // You may inject this from backend
-                amount: data.amount,
-                currency: 'INR',
-                order_id: data.order_id,
-                handler: function (response){
-                    fetch('verify.php', {
-                        method: 'POST',
-                        headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-                        body: 'razorpay_payment_id=' + encodeURIComponent(response.razorpay_payment_id) +
-                              '&razorpay_order_id=' + encodeURIComponent(response.razorpay_order_id) +
-                              '&razorpay_signature=' + encodeURIComponent(response.razorpay_signature)
-                    }).then(r => {
-                        if (r.redirected) {
-                            window.location = r.url;
-                        } else {
-                            r.text().then(t => alert(t));
-                        }
-                    });
-                },
-                theme: { color: '#3399cc' }
-            };
-            var rzp = new Razorpay(options);
-            rzp.open();
-        })
-        .catch(err => alert('Error: ' + err.message));
-    });
-    </script>
-</body>
-
+  </body>
 </html>
