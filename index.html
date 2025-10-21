@@ -616,7 +616,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="donate_now_btn text-center">
-                        <a href="#" class="boxed-btn4">Donate Now</a>
+                        <a href="#" class="boxed-btn4" id="donate-btn">Donate Now</a>
                     </div>
                 </div>
 
@@ -780,6 +780,65 @@
     <script src="js/mail-script.js"></script>
 
     <script src="js/main.js"></script>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script>
+    document.getElementById('donate-btn').addEventListener('click', function(e) {
+        e.preventDefault();
+        // Get amount from radio or input
+        var amount = 100;
+        var radios = document.querySelectorAll('input[name="radio-group"]');
+        for (var i = 0; i < radios.length; i++) {
+            if (radios[i].checked && radios[i].id !== 'Other') {
+                amount = radios[i].nextElementSibling.textContent.trim();
+            }
+        }
+        var otherInput = document.querySelector('.donation_form input.form-control');
+        if (document.getElementById('Other').checked && otherInput && otherInput.value) {
+            amount = otherInput.value.replace(/[^0-9]/g, '');
+        }
+        if (!amount || isNaN(amount) || amount <= 0) {
+            alert('Please enter a valid amount');
+            return;
+        }
+        fetch('create_order.php', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+            body: 'amount=' + encodeURIComponent(amount)
+        })
+        .then(res => res.json())
+        .then(data => {
+            if (!data.order_id) {
+                alert('Order creation failed: ' + (data.error || 'Unknown error'));
+                return;
+            }
+            var options = {
+                key: window.RAZORPAY_KEY_ID || 'rzp_test_xxxxxxxxxxxxx', // You may inject this from backend
+                amount: data.amount,
+                currency: 'INR',
+                order_id: data.order_id,
+                handler: function (response){
+                    fetch('verify.php', {
+                        method: 'POST',
+                        headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+                        body: 'razorpay_payment_id=' + encodeURIComponent(response.razorpay_payment_id) +
+                              '&razorpay_order_id=' + encodeURIComponent(response.razorpay_order_id) +
+                              '&razorpay_signature=' + encodeURIComponent(response.razorpay_signature)
+                    }).then(r => {
+                        if (r.redirected) {
+                            window.location = r.url;
+                        } else {
+                            r.text().then(t => alert(t));
+                        }
+                    });
+                },
+                theme: { color: '#3399cc' }
+            };
+            var rzp = new Razorpay(options);
+            rzp.open();
+        })
+        .catch(err => alert('Error: ' + err.message));
+    });
+    </script>
 </body>
 
 </html>
