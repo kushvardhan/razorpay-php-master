@@ -4,6 +4,8 @@ require __DIR__ . '/razorpay/config.php';
 use Razorpay\Api\Api;
 use Razorpay\Api\Errors\SignatureVerificationError;
 
+// Set session cookie lifetime to 1 day
+session_set_cookie_params(86400);
 session_start();
 if (!isset($_SESSION['user_id'])) {
     header('Location: /login.php?return_to=/payment.php');
@@ -55,9 +57,7 @@ if ($payment_id && $order_id && $signature) {
             // Store info in session for success page
             $_SESSION['success_message'] = "Hey $user_name, you have done the payment of ₹$amount to our charity. Thank you!";
 
-            // Log out user after payment
-            session_unset();
-            session_destroy();
+            // Do NOT log out user immediately. Session persists for 1 day.
             header('Location: /success.html');
             exit;
             }

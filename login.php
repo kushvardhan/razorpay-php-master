@@ -1,4 +1,6 @@
 <?php
+// Set session cookie lifetime to 1 day
+session_set_cookie_params(86400);
 session_start();
 if (isset($_SESSION['user_id'])) {
     header('Location: index.html');
