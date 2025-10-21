@@ -46,8 +46,20 @@ if ($payment_id && $order_id && $signature) {
             $payCheck->execute([$payment_id]);
             if ($payCheck->fetch()) {
                 log_error('Duplicate payment: ' . $payment_id);
-                header('Location: /success.html');
-                exit;
+            // Get user name before logout
+            $userStmt = $pdo->prepare('SELECT name FROM users WHERE id = ?');
+            $userStmt->execute([$_SESSION['user_id']]);
+            $user = $userStmt->fetch(PDO::FETCH_ASSOC);
+            $user_name = $user['name'] ?? '';
+
+            // Store info in session for success page
+            $_SESSION['success_message'] = "Hey $user_name, you have done the payment of ₹$amount to our charity. Thank you!";
+
+            // Log out user after payment
+            session_unset();
+            session_destroy();
+            header('Location: /success.html');
+            exit;
             }
 
             // Only update if order is not already paid
@@ -65,6 +77,18 @@ if ($payment_id && $order_id && $signature) {
                 $payment->capture(['amount' => $amount]);
             }
 
+            // Get user name before logout
+            $userStmt = $pdo->prepare('SELECT name FROM users WHERE id = ?');
+            $userStmt->execute([$_SESSION['user_id']]);
+            $user = $userStmt->fetch(PDO::FETCH_ASSOC);
+            $user_name = $user['name'] ?? '';
+
+            // Store info in session for success page
+            $_SESSION['success_message'] = "Hey $user_name, you have done the payment of ₹$amount to our charity. Thank you!";
+
+            // Log out user after payment
+            session_unset();
+            session_destroy();
             header('Location: /success.html');
             exit;
     } catch (SignatureVerificationError $e) {
