@@ -7,9 +7,13 @@
 echo "=== Razorpay Payment Gateway Verification ===\n\n";
 
 $errors = [];
+$success = [];
+$warnings = [];
+
 // This file is not needed for payment flow. Please use verify.php in project root.
+$files = [
     'public/test.php' => __DIR__ . '/public/test.php',
-    'Razorpay.php' => __DIR__ . '/Razorpay.php'
+    'Razorpay.php' => __DIR__ . '/Razorpay.php',
 ];
 
 foreach ($files as $name => $path) {

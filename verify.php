@@ -29,32 +29,44 @@ if ($payment_id && $order_id && $signature) {
         ];
         $api->utility->verifyPaymentSignature($attributes);
 
-        // DB connection
-        $pdo = new PDO('mysql:host=localhost;dbname=your_db', 'your_user', 'your_pass');
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            // DB connection
+            $pdo = new PDO('mysql:host=' . DB_HOST . ';dbname=' . DB_NAME, DB_USER, DB_PASS);
+            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        // Update order status
-        $stmt = $pdo->prepare('UPDATE orders SET status = ? WHERE razorpay_order_id = ?');
-        $stmt->execute(['paid', $order_id]);
+            // Get order
+            $orderStmt = $pdo->prepare('SELECT id, status, amount FROM orders WHERE razorpay_order_id = ?');
+            $orderStmt->execute([$order_id]);
+            $order = $orderStmt->fetch(PDO::FETCH_ASSOC);
+            $order_db_id = $order['id'] ?? null;
+            $amount = $order['amount'] ?? 0;
+            $order_status = $order['status'] ?? '';
 
-        // Insert payment
-        $orderStmt = $pdo->prepare('SELECT id, amount FROM orders WHERE razorpay_order_id = ?');
-        $orderStmt->execute([$order_id]);
-        $order = $orderStmt->fetch(PDO::FETCH_ASSOC);
-        $order_db_id = $order['id'] ?? null;
-        $amount = $order['amount'] ?? 0;
+            // Prevent duplicate payment
+            $payCheck = $pdo->prepare('SELECT id FROM payments WHERE razorpay_payment_id = ?');
+            $payCheck->execute([$payment_id]);
+            if ($payCheck->fetch()) {
+                log_error('Duplicate payment: ' . $payment_id);
+                header('Location: /success.html');
+                exit;
+            }
 
-        $stmt = $pdo->prepare('INSERT INTO payments (user_id, order_id, razorpay_payment_id, razorpay_signature, amount, status, created_at) VALUES (?, ?, ?, ?, ?, ?, NOW())');
-        $stmt->execute([$_SESSION['user_id'], $order_db_id, $payment_id, $signature, $amount, 'paid']);
+            // Only update if order is not already paid
+            if ($order_status !== 'paid') {
+                $stmt = $pdo->prepare('UPDATE orders SET status = ? WHERE razorpay_order_id = ?');
+                $stmt->execute(['paid', $order_id]);
+            }
 
-        // Capture payment if authorized
-        $payment = $api->payment->fetch($payment_id);
-        if ($payment['status'] === 'authorized') {
-            $payment->capture(['amount' => $amount]);
-        }
+            $stmt = $pdo->prepare('INSERT INTO payments (user_id, order_id, razorpay_payment_id, razorpay_signature, amount, status, created_at) VALUES (?, ?, ?, ?, ?, ?, NOW())');
+            $stmt->execute([$_SESSION['user_id'], $order_db_id, $payment_id, $signature, $amount, 'paid']);
 
-        header('Location: /success.html');
-        exit;
+            // Capture payment if authorized
+            $payment = $api->payment->fetch($payment_id);
+            if ($payment['status'] === 'authorized') {
+                $payment->capture(['amount' => $amount]);
+            }
+
+            header('Location: /success.html');
+            exit;
     } catch (SignatureVerificationError $e) {
         log_error('Signature verification failed: ' . $e->getMessage());
         header('Location: /failure.html');

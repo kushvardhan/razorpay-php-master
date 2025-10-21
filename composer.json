@@ -1,0 +1,10 @@
+{
+  "require": {
+    "razorpay/razorpay": "^2.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Razorpay\\Api\\": "razorpay-php/src/"
+    }
+  }
+}

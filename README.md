@@ -6,16 +6,17 @@
    ```
    composer install
    ```
-2. **Configure Razorpay keys:**
-   - Copy `razorpay/config.php.example` to `razorpay/config.php`.
-   - Add your Razorpay Key ID and Key Secret to `config.php` (do NOT commit secrets).
+2. **Configure Razorpay keys and DB:**
+   - Copy `.env.example` to `.env` in project root.
+   - Add your Razorpay Key ID, Key Secret, and DB credentials to `.env` (do NOT commit secrets).
+   - `razorpay/config.php` will load these automatically.
 3. **Setup Database:**
    - Create a MySQL database and user.
    - Import schema:
      ```
      mysql -u your_user -p your_db < db/schema.sql
      ```
-   - Update DB credentials in PHP files (`create_order.php`, `verify.php`).
+   - No need to edit PHP files for DB credentials; all config is loaded from `.env`.
 4. **Run the app:**
    - Ensure your web server points to the project root.
    - Use Razorpay test keys for development.
@@ -34,8 +35,9 @@
 
 ## Files Added/Updated
 
-- `razorpay/config.php.example` (add your keys)
-- `razorpay/config.php` (not committed)
+- `.env.example` (add your keys and DB config)
+- `.env` (not committed)
+- `razorpay/config.php` (loads config from .env)
 - `db/schema.sql` (DB tables)
 - `create_order.php` (order creation)
 - `verify.php` (payment verification)
