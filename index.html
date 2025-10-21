@@ -782,8 +782,16 @@
     <script src="js/main.js"></script>
     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
     <script>
+    function isLoggedIn() {
+        // This should be set by backend, e.g. window.USER_ID or via cookie/session
+        return window.USER_ID && window.USER_ID !== '';
+    }
     document.getElementById('donate-btn').addEventListener('click', function(e) {
         e.preventDefault();
+        if (!isLoggedIn()) {
+            window.location.href = 'login.php?return_to=index.html';
+            return;
+        }
         // Get amount from radio or input
         var amount = 100;
         var radios = document.querySelectorAll('input[name="radio-group"]');
