@@ -71,7 +71,6 @@ include 'includes/header.php';
                         <h2 class="text-2xl font-bold text-[#1a237e] mb-6">Registration Details</h2>
                         <div class="space-y-2 text-gray-700">
                             <p><strong>Registration Date:</strong> 11th July 2014</p>
-                            <p><strong>Deed No.:</strong> 61, Book No.: 4</p>
                             <p><strong>Registry Office:</strong> Sub Registry Office, Darbhanga</p>
                             <p><strong>Government:</strong> Government of Bihar</p>
                             <p><strong>Founder/Trustee:</strong> Md. Tabrizi (Sattler)</p>

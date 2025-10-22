@@ -43,7 +43,6 @@ include 'includes/header.php';
                     <div>
                         <h3 class="font-semibold text-[#1a237e] mb-2">Official Registration</h3>
                         <p class="text-gray-700">Registered: 11th July 2014</p>
-                        <p class="text-gray-700">Deed No.: 61, Book No.: 4</p>
                         <p class="text-gray-700">Sub Registry Office, Darbhanga</p>
                         <p class="text-gray-700">Government of Bihar</p>
                     </div>

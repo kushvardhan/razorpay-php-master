@@ -57,7 +57,6 @@ include 'includes/header.php';
                     <h4 class="text-xl font-bold text-[#1a237e] mb-2">Official Registration</h4>
                     <ul class="text-left list-disc list-inside text-gray-700">
                         <li>Govt. of Bihar, Sub Registry Office, Darbhanga</li>
-                        <li>Deed No.: 61, Book No.: 4</li>
                         <li>Registered: 15/07/2014</li>
                     </ul>
                 </div>
