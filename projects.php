@@ -1,16 +1,8 @@
-<?php session_start(); ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Our Projects | Cambridge Public Education and Welfare Trust</title>
-    <link rel="icon" type="image/png" href="cpeduw-Photoroom.png">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-gray-50 text-gray-900">
-    <?php include 'includes/nav.php'; ?>
+<?php
+session_start();
+$page_title = 'Our Projects | Cambridge Public Education and Welfare Trust';
+include 'includes/header.php';
+?>
 
     <section class="bg-[#1a237e] text-white py-16">
         <div class="container mx-auto text-center">
@@ -137,10 +129,4 @@
         </div>
     </main>
 
-    <footer class="bg-[#1a237e] text-white py-6 mt-16">
-        <div class="container mx-auto text-center text-sm">
-            <p>&copy; <?= date('Y') ?> Cambridge Public Education and Welfare Trust. All rights reserved.</p>
-        </div>
-    </footer>
-</body>
-</html>
+<?php include 'includes/footer.php'; ?>
