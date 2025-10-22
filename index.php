@@ -5,64 +5,104 @@ include 'includes/header.php';
 ?>
 
     <!-- Simple Hero Section -->
-    <section class="bg-gradient-to-br from-blue-900 via-blue-800 to-purple-900 text-white py-20">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row items-center gap-12">
-                <div class="md:w-1/2 text-center md:text-left">
-                    <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-                        Empowering Education,
-                        <span class="text-yellow-400">Enabling Futures</span>
-                    </h1>
-                    <p class="text-xl mb-8 text-gray-200">
-                        Join us in transforming lives through quality education for every child in India.
-                    </p>
-                    <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="cause_details.php" class="bg-gradient-to-r from-orange-500 to-red-500 text-white px-8 py-4 rounded-full font-bold text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
-                            ❤️ Donate Now
-                        </a>
-                        <a href="about.php" class="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-gray-900 transition-all duration-300">
-                            Learn More
-                        </a>
-                    </div>
-                </div>
-                <div class="md:w-1/2">
-                    <img src="img/banner/banner.png" alt="Children Learning" class="rounded-2xl shadow-2xl w-full">
-                </div>
-            </div>
-        </div>
-    </section>
+<section class="relative w-full h-[80vh] lg:h-[550px] overflow-hidden">
+  <!-- Background Image -->
+  <!-- Background Image -->
+<img src="img/banner/banner.png" alt="Children Learning" class="absolute inset-0 w-full h-full object-cover">
 
-    <section class="py-16 bg-white">
-        <div class="container mx-auto text-center">
-            <h3 class="text-2xl font-bold text-[#1a237e] mb-4">Our Mission</h3>
-            <p class="max-w-2xl mx-auto mb-8 text-lg">To provide quality education and welfare support to underprivileged children in Bihar, India. Registered as a charitable public trust, we are committed to building a brighter future for every child.</p>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-yellow-50 p-6 rounded-lg shadow">
-                    <h4 class="text-xl font-bold text-[#1a237e] mb-2">Trust Goals</h4>
-                    <ul class="text-left list-disc list-inside text-gray-700">
-                        <li>Access to quality education</li>
-                        <li>Welfare programs for children</li>
-                        <li>Community empowerment</li>
-                    </ul>
-                </div>
-                <div class="bg-yellow-50 p-6 rounded-lg shadow">
-                    <h4 class="text-xl font-bold text-[#1a237e] mb-2">Achievements</h4>
-                    <ul class="text-left list-disc list-inside text-gray-700">
-                        <li>500+ children supported</li>
-                        <li>10+ schools partnered</li>
-                        <li>Numerous successful projects</li>
-                    </ul>
-                </div>
-                <div class="bg-yellow-50 p-6 rounded-lg shadow">
-                    <h4 class="text-xl font-bold text-[#1a237e] mb-2">Official Registration</h4>
-                    <ul class="text-left list-disc list-inside text-gray-700">
-                        <li>Govt. of Bihar, Sub Registry Office, Darbhanga</li>
-                        <li>Registered: 15/07/2014</li>
-                    </ul>
-                </div>
-            </div>
+<!-- Top-right Trust Badge -->
+<div class="absolute top-4 right-4 sm:top-6 sm:right-6 bg-white/90 text-green-700 select-none font-bold px-4 py-2 rounded-full shadow-md flex items-center gap-2 text-xs sm:text-sm md:text-base">
+  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 sm:h-5 sm:w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+  </svg>
+  Registered NGO
+</div>
+
+
+  <!-- Overlay behind text -->
+  <div class="absolute inset-0 lg:w-2/5 lg:right-0 bg-black/30 lg:backdrop-blur-sm flex items-center">
+    <div class="text-left px-6 sm:px-8 lg:px-12 space-y-4 sm:space-y-6">
+      <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-snug">
+        Empowering Education,<br>
+        <span class="text-yellow-400">Enabling Futures</span>
+      </h1>
+      <p class="text-gray-200 text-base sm:text-lg md:text-xl max-w-md">
+        We are a registered charitable trust providing quality education and welfare support to underprivileged children in Bihar. Every donation transforms a child's future.
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-4">
+        <a href="cause_details.php" class="bg-gradient-to-r from-orange-500 to-red-500 text-white px-3 sm:px-4 py-2 sm:py-2 rounded-full font-bold text-base sm:text-lg shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
+          ❤️ Donate Now
+        </a>
+        <a href="about.php" class="border-2 border-white text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-base sm:text-lg hover:bg-white hover:text-gray-900 transition-all duration-300">
+          Learn More
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-16 sm:py-20 bg-gradient-to-b from-blue-50 to-white">
+  <div class="container mx-auto px-4 text-center">
+    <h3 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#1a237e] mb-4 sm:mb-6">
+      Our Mission
+    </h3>
+    <p class="max-w-3xl mx-auto mb-12 text-base sm:text-lg md:text-xl text-gray-700 px-2 sm:px-0">
+      As a registered charitable trust, we are committed to providing quality education and welfare support to underprivileged children in Bihar, India. Every donation creates a brighter future for a child.
+    </p>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
+
+      <!-- Trust Goals Card -->
+      <div class="bg-white rounded-3xl shadow-lg p-6 sm:p-8 transform hover:-translate-y-2 transition-transform duration-300">
+        <div class="flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 bg-blue-100 rounded-full mx-auto mb-4 sm:mb-5">
+          <svg class="w-7 h-7 sm:w-8 sm:h-8 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 14l6.16-3.422M12 14l-6.16-3.422M12 14v7"/>
+          </svg>
         </div>
-    </section>
+        <h4 class="text-lg sm:text-xl font-bold text-[#1a237e] mb-2 sm:mb-3">Our Goals</h4>
+        <ul class="text-left list-disc list-inside text-gray-700 space-y-1 sm:space-y-1.5 text-sm sm:text-base">
+          <li>Provide quality education to every child</li>
+          <li>Support child welfare and development</li>
+          <li>Empower communities for long-term change</li>
+        </ul>
+      </div>
+
+      <!-- Achievements Card -->
+      <div class="bg-white rounded-3xl shadow-lg p-6 sm:p-8 transform hover:-translate-y-2 transition-transform duration-300">
+        <div class="flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 bg-yellow-100 rounded-full mx-auto mb-4 sm:mb-5">
+          <svg class="w-7 h-7 sm:w-8 sm:h-8 text-yellow-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4"/>
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 20c4.418 0 8-1.79 8-4s-3.582-4-8-4-8 1.79-8 4 3.582 4 8 4z"/>
+          </svg>
+        </div>
+        <h4 class="text-lg sm:text-xl font-bold text-[#1a237e] mb-2 sm:mb-3">Achievements</h4>
+        <ul class="text-left list-disc list-inside text-gray-700 space-y-1 sm:space-y-1.5 text-sm sm:text-base">
+          <li>500+ children supported</li>
+          <li>10+ schools partnered</li>
+          <li>Countless successful projects</li>
+        </ul>
+      </div>
+
+      <!-- Registration Card -->
+      <div class="bg-white rounded-3xl shadow-lg p-6 sm:p-8 transform hover:-translate-y-2 transition-transform duration-300">
+        <div class="flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 bg-green-100 rounded-full mx-auto mb-4 sm:mb-5">
+          <svg class="w-7 h-7 sm:w-8 sm:h-8 text-green-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+          </svg>
+        </div>
+        <h4 class="text-lg sm:text-xl font-bold text-[#1a237e] mb-2 sm:mb-3">Official Registration</h4>
+        <ul class="text-left list-disc list-inside text-gray-700 space-y-1 sm:space-y-1.5 text-sm sm:text-base">
+          <li>Registered with Govt. of Bihar</li>
+          <li>Sub Registry Office, Darbhanga</li>
+          <li>Registration Date: 15/07/2014</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
 
     <section class="py-16 bg-gray-100">
         <div class="container mx-auto">
