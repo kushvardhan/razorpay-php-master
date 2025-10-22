@@ -60,7 +60,7 @@ include 'includes/header.php';
     <footer class="bg-[#1a237e] text-white py-6 mt-16">
         <div class="container mx-auto text-center text-sm">
             <img src="cpeduw-Photoroom.png" alt="Trust Logo" class="h-8 w-8 mx-auto mb-2">
-            <p>Registered: 11th July 2014 | Deed No.: 61, Book No.: 4 | Sub Registry Office, Darbhanga, Govt. of Bihar</p>
+            <p>Registered: 11th July 2014 | Sub Registry Office, Darbhanga, Govt. of Bihar</p>
             <p>Founder/Trustee: Md. Tabrizi (Sattler)</p>
             <p>&copy; <span id="year"></span> Cambridge Public Education and Welfare Trust. All rights reserved.</p>
         </div>

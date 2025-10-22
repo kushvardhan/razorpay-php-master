@@ -41,7 +41,7 @@ if (!$payment) {
                 <img src="cpeduw-Photoroom.png" alt="Trust Logo" class="h-16 w-16 mx-auto mb-4">
                 <h1 class="text-xl font-bold text-[#1a237e]">CAMBRIDGE PUBLIC EDUCATION AND WELFARE TRUST</h1>
                 <p class="text-sm text-gray-600">Vill. Jatpur, P.O.-Somra Baghla, P.S.-Moro, Dist.-Darbhanga, Bihar, India</p>
-                <p class="text-sm text-gray-600">Registered: 11th July 2014 | Deed No.: 61, Book No.: 4</p>
+                <p class="text-sm text-gray-600">Registered: 11th July 2014</p>
             </div>
 
             <div class="border-t border-b py-4 mb-6">
