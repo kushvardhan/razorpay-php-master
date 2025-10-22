@@ -1,39 +1,33 @@
 <?php
 session_start();
-require __DIR__ . '/razorpay/config.php';
-
-$user_name = '';
-if (isset($_SESSION['user_id'])) {
-    $pdo = new PDO('mysql:host=' . DB_HOST . ';dbname=' . DB_NAME, DB_USER, DB_PASS);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $stmt = $pdo->prepare('SELECT name FROM users WHERE id = ?');
-    $stmt->execute([$_SESSION['user_id']]);
-    $user = $stmt->fetch(PDO::FETCH_ASSOC);
-    $user_name = $user['name'] ?? '';
-}
+$page_title = 'Cambridge Public Education and Welfare Trust';
+include 'includes/header.php';
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cambridge Public Education and Welfare Trust</title>
-    <link rel="icon" type="image/png" href="cpeduw-Photoroom.png">
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-gray-50 text-gray-900">
-    <?php include 'includes/nav.php'; ?>
 
-    <section class="bg-[#1a237e] text-white py-16">
-        <div class="container mx-auto flex flex-col md:flex-row items-center gap-8">
-            <div class="md:w-1/2">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Empowering Education, Enabling Futures</h2>
-                <p class="mb-6 text-lg">Join us in transforming lives through quality education for every child in India.</p>
-                <a href="cause_details.php" class="bg-yellow-400 text-[#1a237e] font-bold py-3 px-8 rounded-full shadow hover:bg-yellow-300 transition">Support a Cause</a>
-            </div>
-            <div class="md:w-1/2">
-                <img src="img/banner/banner.png" alt="Children Learning" class="rounded-lg shadow-lg w-full h-64 object-cover">
+    <!-- Simple Hero Section -->
+    <section class="bg-gradient-to-br from-blue-900 via-blue-800 to-purple-900 text-white py-20">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2 text-center md:text-left">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                        Empowering Education,
+                        <span class="text-yellow-400">Enabling Futures</span>
+                    </h1>
+                    <p class="text-xl mb-8 text-gray-200">
+                        Join us in transforming lives through quality education for every child in India.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="cause_details.php" class="bg-gradient-to-r from-orange-500 to-red-500 text-white px-8 py-4 rounded-full font-bold text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
+                            ❤️ Donate Now
+                        </a>
+                        <a href="about.php" class="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-gray-900 transition-all duration-300">
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <img src="img/banner/banner.png" alt="Children Learning" class="rounded-2xl shadow-2xl w-full">
+                </div>
             </div>
         </div>
     </section>
@@ -127,14 +121,4 @@ if (isset($_SESSION['user_id'])) {
         </div>
     </section>
 
-    <footer class="bg-[#1a237e] text-white py-8 mt-16">
-        <div class="container mx-auto text-center">
-            <img src="cpeduw-Photoroom.png" alt="Trust Logo" class="h-8 w-8 mx-auto mb-2">
-            <p>Registered: 11th July 2014 | Deed No.: 61, Book No.: 4 | Sub Registry Office, Darbhanga, Govt. of Bihar</p>
-            <p>Founder/Trustee: Md. Tabrizi (Sattler)</p>
-            <p>&copy; <span id="year"></span> Cambridge Public Education and Welfare Trust. All rights reserved.</p>
-        </div>
-        <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
-    </footer>
-</body>
-</html>
+<?php include 'includes/footer.php'; ?>

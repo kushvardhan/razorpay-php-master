@@ -11,29 +11,16 @@ $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 $stmt = $pdo->prepare('SELECT name, email FROM users WHERE id = ?');
 $stmt->execute([$_SESSION['user_id']]);
 $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+if (!$user) {
+    $user = ['name' => 'User', 'email' => ''];
+}
+
+$page_title = 'Donate | Cambridge Public Education and Welfare Trust';
+$extra_head = '<script src="https://checkout.razorpay.com/v1/checkout.js"></script>';
+include 'includes/header.php';
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Donate | Cambridge Public Education and Welfare Trust</title>
-    <link rel="icon" type="image/png" href="cpeduw-Photoroom.png">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-</head>
-<body class="bg-gray-50 text-gray-900">
-    <!-- Header -->
-    <header class="bg-[#1a237e] text-white py-4">
-        <div class="container mx-auto flex items-center gap-4">
-            <img src="cpeduw-Photoroom.png" alt="Trust Logo" class="h-10 w-10 rounded-lg">
-            <div>
-                <h1 class="text-lg font-bold">CAMBRIDGE PUBLIC EDUCATION AND WELFARE TRUST</h1>
-                <p class="text-yellow-400 text-xs">Vill. Jatpur, P.O.-Somra Baghla, P.S.-Moro, Dist.-Darbhanga, Bihar, India</p>
-            </div>
-        </div>
-    </header>
+
     <!-- Payment Section -->
     <main class="container mx-auto py-12">
         <div class="max-w-lg mx-auto bg-white p-8 rounded-lg shadow-lg">
@@ -60,27 +47,19 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
                     <label class="block text-sm font-medium text-[#1a237e]">Message (optional)</label>
                     <textarea id="donation-message" name="message" class="w-full p-3 border border-yellow-400 rounded" placeholder="Your message or dedication"></textarea>
                 </div>
-                <button type="submit" id="pay-btn" class="w-full bg-yellow-400 text-[#1a237e] font-bold py-3 rounded-full hover:bg-yellow-300 transition">Donate Now</button>
+                <button type="submit" id="pay-btn" class="w-full bg-yellow-400 text-[#1a237e] font-bold py-3 rounded-full hover:bg-yellow-300 transition">Donate</button>
                 <div id="error-msg" class="text-red-500 text-sm mt-4 hidden"></div>
             </form>
         </div>
     </main>
-    <!-- Footer -->
-    <footer class="bg-[#1a237e] text-white py-6 mt-16">
-        <div class="container mx-auto text-center text-sm">
-            <img src="cpeduw-Photoroom.png" alt="Trust Logo" class="h-8 w-8 mx-auto mb-2">
-            <p>Registered: 11th July 2014 | Deed No.: 61, Book No.: 4 | Sub Registry Office, Darbhanga, Govt. of Bihar</p>
-            <p>Founder/Trustee: Md. Tabrizi (Sattler)</p>
-            <p>&copy; <span id="year"></span> Cambridge Public Education and Welfare Trust. All rights reserved.</p>
-        </div>
-        <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
-    </footer>
+
     <script>
-    const razorKey = "<?php echo htmlspecialchars(RAZOR_KEY_ID); ?>";
-    const userName = "<?php echo htmlspecialchars($user['name']); ?>";
-    const userEmail = "<?php echo htmlspecialchars($user['email']); ?>";
+    const razorKey = <?php echo json_encode(RAZOR_KEY_ID ?? ''); ?>;
+    const userName = <?php echo json_encode($user['name'] ?? ''); ?>;
+    const userEmail = <?php echo json_encode($user['email'] ?? ''); ?>;
     
     function setAmount(amount) {
+        console.log('Setting amount:', amount);
         document.getElementById('donation-amount').value = amount;
         document.querySelectorAll('.preset-btn').forEach(btn => {
             btn.classList.remove('border-[#1a237e]', 'bg-yellow-200');
@@ -92,10 +71,12 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
     
     document.getElementById('donate-form').addEventListener('submit', async function(e) {
         e.preventDefault();
+        console.log('Form submitted');
         const amount = parseInt(document.getElementById('donation-amount').value);
         const message = document.getElementById('donation-message').value.trim();
         const errorMsg = document.getElementById('error-msg');
         errorMsg.classList.add('hidden');
+        console.log('Amount:', amount, 'Message:', message);
         
         if (!amount || isNaN(amount) || amount < 100) {
             errorMsg.textContent = 'We appreciate your generosity, but the minimum donation amount is ₹100 to help us process donations efficiently.';
@@ -104,7 +85,7 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
         }
         
         try {
-            const res = await fetch('/charifit/create_order.php', {
+            const res = await fetch('create_order.php', {
                 method: 'POST',
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                 body: 'amount=' + encodeURIComponent(amount) + '&message=' + encodeURIComponent(message)
@@ -128,7 +109,7 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
                     email: userEmail
                 },
                 handler: function (response){
-                    fetch('/charifit/verify.php', {
+                    fetch('verify.php', {
                         method: 'POST',
                         headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                         body: 'razorpay_payment_id=' + encodeURIComponent(response.razorpay_payment_id) +
@@ -152,5 +133,5 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
         }
     });
     </script>
-</body>
-</html>
+
+<?php include 'includes/footer.php'; ?>

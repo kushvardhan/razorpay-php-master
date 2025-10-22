@@ -1,29 +1,8 @@
 <?php
 session_start();
-require __DIR__ . '/razorpay/config.php';
-
-$user_name = '';
-if (isset($_SESSION['user_id'])) {
-    $pdo = new PDO('mysql:host=' . DB_HOST . ';dbname=' . DB_NAME, DB_USER, DB_PASS);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $stmt = $pdo->prepare('SELECT name FROM users WHERE id = ?');
-    $stmt->execute([$_SESSION['user_id']]);
-    $user = $stmt->fetch(PDO::FETCH_ASSOC);
-    $user_name = $user['name'] ?? '';
-}
+$page_title = 'Give Every Child a Chance | Cambridge Public Education and Welfare Trust';
+include 'includes/header.php';
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Give Every Child a Chance | Cambridge Public Education and Welfare Trust</title>
-    <link rel="icon" type="image/png" href="cpeduw-Photoroom.png">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-gray-50 text-gray-900">
-    <?php include 'includes/nav.php'; ?>
 
     <section class="bg-[#1a237e] text-white py-16">
         <div class="container mx-auto text-center">
@@ -119,13 +98,4 @@ if (isset($_SESSION['user_id'])) {
         </div>
     </main>
 
-    <footer class="bg-[#1a237e] text-white py-6 mt-16">
-        <div class="container mx-auto text-center text-sm">
-            <img src="cpeduw-Photoroom.png" alt="Trust Logo" class="h-8 w-8 mx-auto mb-2">
-            <p>Registered: 11th July 2014 | Deed No.: 61, Book No.: 4 | Sub Registry Office, Darbhanga, Govt. of Bihar</p>
-            <p>Founder/Trustee: Md. Tabrizi (Sattler)</p>
-            <p>&copy; <?= date('Y') ?> Cambridge Public Education and Welfare Trust. All rights reserved.</p>
-        </div>
-    </footer>
-</body>
-</html>
+<?php include 'includes/footer.php'; ?>

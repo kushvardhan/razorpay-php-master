@@ -32,17 +32,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Register | Cambridge Public Education and Welfare Trust</title>
-    <link rel="icon" type="image/png" href="cpeduw-Photoroom.png">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-gray-50 text-gray-900">
+<?php
+$page_title = 'Register | Cambridge Public Education and Welfare Trust';
+include 'includes/header.php';
+?>
     <!-- Header -->
     <header class="bg-[#1a237e] text-white py-4">
         <div class="container mx-auto flex items-center gap-4">
@@ -82,5 +75,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
         <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
     </footer>
-</body>
-</html>
+<?php include 'includes/footer.php'; ?>
