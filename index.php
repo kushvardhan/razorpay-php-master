@@ -138,82 +138,145 @@ include 'includes/header.php';
   </div>
 </section>
 
-
-<section class="py-16 bg-gradient-to-b from-blue-50 to-white">
+<section class="py-20 bg-gradient-to-b from-[#e0f2f1] via-white to-[#e3f2fd]">
   <div class="container mx-auto px-4 text-center">
-    <h3 class="text-3xl sm:text-4xl font-extrabold text-[#1a237e] mb-12">Hear From Our Beneficiaries & Donors</h3>
+    <h3 class="text-3xl sm:text-4xl font-extrabold text-[#0d47a1] mb-14">
+      What Our Donors & Beneficiaries Say
+    </h3>
 
     <div class="relative overflow-hidden">
-      <div class="flex space-x-6 transition-transform duration-500" id="testimonialSlider">
-
-        <!-- Testimonial 1 -->
-        <div class="min-w-full md:min-w-1/2 lg:min-w-1/3 bg-white p-8 rounded-3xl shadow-xl flex flex-col items-center text-center hover:scale-102 transform transition-all duration-300">
-          <img src="img/post/post_1.png" alt="Asha Devi" class="h-24 w-24 rounded-full mb-4 ring-4 ring-yellow-300 shadow-md">
-          <p class="italic text-gray-700 mb-4 text-base sm:text-lg">"Thanks to Cambridge Trust, my daughter now attends school and dreams of becoming a teacher. Their programs are life-changing and fully trustworthy."</p>
-          <h4 class="font-bold text-[#1a237e] text-lg sm:text-xl">Asha Devi</h4>
-          <span class="text-sm text-gray-500 mb-4">Beneficiary</span>
-          <a href="cause_details.php" class="mt-2 inline-block bg-gradient-to-r from-orange-500 to-red-500 text-white px-6 py-2 rounded-full font-semibold shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-200 text-sm sm:text-base">Support Similar Causes ❤️</a>
+      <div class="flex space-x-8 transition-transform duration-500" id="testimonialSlider">
+        
+        <!-- Card 1 -->
+        <div class="min-w-full md:min-w-1/2 lg:min-w-1/3 bg-white border border-[#e0f2f1] p-10 rounded-3xl shadow-[0_10px_25px_rgba(0,0,0,0.07)] hover:shadow-[0_15px_35px_rgba(0,0,0,0.12)] transition-all duration-300 flex flex-col items-center text-center">
+          <img src="img/post/post_1.png" alt="Asha Devi" class="h-24 w-24 rounded-full mb-5 ring-4 ring-[#a7f3d0] shadow-md">
+          <p class="italic text-gray-700 mb-6 text-base sm:text-lg leading-relaxed">
+            "Cambridge Trust helped my daughter dream again. Their work brings hope and real change to our community."
+          </p>
+          <h4 class="font-bold text-[#0d47a1] text-lg sm:text-xl">Asha Devi</h4>
+          <span class="text-sm text-gray-500 mb-6">Beneficiary</span>
+          <a href="cause_details.php" class="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#2e7d32] to-[#43a047] text-white px-8 py-3 rounded-full font-semibold shadow-md hover:shadow-xl hover:scale-[1.03] transition-all duration-300 text-base">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 fill-white" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5c0-2.8 2.3-5 5.5-5 1.7 0 3.4.8 4.5 2.1C13.1 3.8 14.8 3 16.5 3 19.7 3 22 5.4 22 8.5c0 3.8-3.4 6.9-8.6 11.6L12 21.35z"/></svg>
+            Support Their Cause
+          </a>
         </div>
 
-        <!-- Testimonial 2 -->
-        <div class="min-w-full md:min-w-1/2 lg:min-w-1/3 bg-white p-8 rounded-3xl shadow-xl flex flex-col items-center text-center hover:scale-102 transform transition-all duration-300">
-          <img src="img/post/post_2.png" alt="Rahul Singh" class="h-24 w-24 rounded-full mb-4 ring-4 ring-blue-300 shadow-md">
-          <p class="italic text-gray-700 mb-4 text-base sm:text-lg">"I have seen the impact of their work in my village. Truly dedicated and transparent, Cambridge Trust is one NGO you can rely on completely."</p>
-          <h4 class="font-bold text-[#1a237e] text-lg sm:text-xl">Rahul Singh</h4>
-          <span class="text-sm text-gray-500 mb-4">Donor</span>
-          <a href="cause_details.php" class="mt-2 inline-block bg-gradient-to-r from-orange-500 to-red-500 text-white px-6 py-2 rounded-full font-semibold shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-200 text-sm sm:text-base">Donate & Make Impact ❤️</a>
+        <!-- Card 2 -->
+        <div class="min-w-full md:min-w-1/2 lg:min-w-1/3 bg-white border border-[#bbdefb] p-10 rounded-3xl shadow-[0_10px_25px_rgba(0,0,0,0.07)] hover:shadow-[0_15px_35px_rgba(0,0,0,0.12)] transition-all duration-300 flex flex-col items-center text-center">
+          <img src="img/post/post_2.png" alt="Rahul Singh" class="h-24 w-24 rounded-full mb-5 ring-4 ring-[#a7c7f9] shadow-md">
+          <p class="italic text-gray-700 mb-6 text-base sm:text-lg leading-relaxed">
+            "Transparent and trustworthy — Cambridge Trust makes a difference that you can see and believe in."
+          </p>
+          <h4 class="font-bold text-[#0d47a1] text-lg sm:text-xl">Rahul Singh</h4>
+          <span class="text-sm text-gray-500 mb-6">Donor</span>
+          <a href="cause_details.php" class="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#0288d1] to-[#039be5] text-white px-8 py-3 rounded-full font-semibold shadow-md hover:shadow-xl hover:scale-[1.03] transition-all duration-300 text-base">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 fill-white" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5c0-2.8 2.3-5 5.5-5 1.7 0 3.4.8 4.5 2.1C13.1 3.8 14.8 3 16.5 3 19.7 3 22 5.4 22 8.5c0 3.8-3.4 6.9-8.6 11.6L12 21.35z"/></svg>
+            Donate Now
+          </a>
         </div>
 
-        <!-- Testimonial 3 -->
-        <div class="min-w-full md:min-w-1/2 lg:min-w-1/3 bg-white p-8 rounded-3xl shadow-xl flex flex-col items-center text-center hover:scale-102 transform transition-all duration-300">
-          <img src="img/post/post_3.png" alt="Suman Kumar" class="h-24 w-24 rounded-full mb-4 ring-4 ring-green-300 shadow-md">
-          <p class="italic text-gray-700 mb-4 text-base sm:text-lg">"The trust’s programs transformed our school. Teachers and children are happier and more motivated. Fully authentic and reliable NGO."</p>
-          <h4 class="font-bold text-[#1a237e] text-lg sm:text-xl">Suman Kumar</h4>
-          <span class="text-sm text-gray-500 mb-4">Community Leader</span>
-          <a href="cause_details.php" class="mt-2 inline-block bg-gradient-to-r from-orange-500 to-red-500 text-white px-6 py-2 rounded-full font-semibold shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-200 text-sm sm:text-base">Support Their Mission ❤️</a>
+        <!-- Card 3 -->
+        <div class="min-w-full md:min-w-1/2 lg:min-w-1/3 bg-white border border-[#c8e6c9] p-10 rounded-3xl shadow-[0_10px_25px_rgba(0,0,0,0.07)] hover:shadow-[0_15px_35px_rgba(0,0,0,0.12)] transition-all duration-300 flex flex-col items-center text-center">
+          <img src="img/post/post_3.png" alt="Suman Kumar" class="h-24 w-24 rounded-full mb-5 ring-4 ring-[#b9f6ca] shadow-md">
+          <p class="italic text-gray-700 mb-6 text-base sm:text-lg leading-relaxed">
+            "Our school changed completely with their support. Honest people doing honest work — that’s rare."
+          </p>
+          <h4 class="font-bold text-[#0d47a1] text-lg sm:text-xl">Suman Kumar</h4>
+          <span class="text-sm text-gray-500 mb-6">Community Leader</span>
+          <a href="cause_details.php" class="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#2e7d32] to-[#43a047] text-white px-8 py-3 rounded-full font-semibold shadow-md hover:shadow-xl hover:scale-[1.03] transition-all duration-300 text-base">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 fill-white" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5c0-2.8 2.3-5 5.5-5 1.7 0 3.4.8 4.5 2.1C13.1 3.8 14.8 3 16.5 3 19.7 3 22 5.4 22 8.5c0 3.8-3.4 6.9-8.6 11.6L12 21.35z"/></svg>
+            Support the Mission
+          </a>
         </div>
-
       </div>
 
-      <!-- Navigation Arrows -->
-      <button onclick="slidePrev()" class="absolute top-1/2 left-2 md:left-0 -translate-y-1/2 bg-white shadow-lg rounded-full p-3 text-lg font-bold hover:bg-green-100 transition z-50">‹</button>
-      <button onclick="slideNext()" class="absolute top-1/2 right-2 md:right-0 -translate-y-1/2 bg-white shadow-lg rounded-full p-3 text-lg font-bold hover:bg-green-100 transition z-50">›</button>
+      <!-- Navigation Buttons -->
+      <button onclick="slidePrev()" class="absolute top-1/2 left-0 -translate-y-1/2 bg-[#e8f5e9] text-[#1b5e20] shadow-md rounded-full p-4 md:p-5 text-2xl font-bold border border-[#a5d6a7] hover:bg-[#1b5e20] hover:text-white transition-all duration-300 z-50">‹</button>
+      <button onclick="slideNext()" class="absolute top-1/2 right-0 -translate-y-1/2 bg-[#e3f2fd] text-[#0d47a1] shadow-md rounded-full p-4 md:p-5 text-2xl font-bold border border-[#90caf9] hover:bg-[#0d47a1] hover:text-white transition-all duration-300 z-50">›</button>
     </div>
   </div>
 </section>
 
-<section id="donate" class="py-24 bg-gradient-to-b from-yellow-50 to-yellow-100">
-    <div class="container mx-auto px-4 text-center">
-        <h2 class="text-4xl sm:text-5xl font-extrabold text-[#1a237e] mb-6">Transform a Life Today</h2>
-        <p class="text-gray-700 text-lg max-w-2xl mx-auto mb-12">Join thousands of compassionate donors who believe in empowering children through education. Your donation has immediate and lasting impact.</p>
 
-        <div class="max-w-4xl mx-auto bg-white rounded-3xl shadow-2xl p-12 relative overflow-hidden hover:shadow-3xl transition transform hover:scale-105">
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-8 text-center">
-                <div class="p-4 bg-yellow-100 rounded-xl">
-                    <h3 class="text-3xl font-bold text-[#1a237e]">1800+</h3>
-                    <p class="text-gray-600 mt-1">Children Supported</p>
-                </div>
-                <div class="p-4 bg-yellow-100 rounded-xl">
-                    <h3 class="text-3xl font-bold text-[#1a237e]">25</h3>
-                    <p class="text-gray-600 mt-1">Education Projects</p>
-                </div>
-                <div class="p-4 bg-yellow-100 rounded-xl">
-                    <h3 class="text-3xl font-bold text-[#1a237e]">100%</h3>
-                    <p class="text-gray-600 mt-1">Secure Payments</p>
-                </div>
-            </div>
 
-            <a href="cause_details.php" class="inline-block bg-yellow-400 text-[#1a237e] font-bold py-4 px-16 rounded-full shadow-lg hover:bg-yellow-300 transition text-xl mb-6">Donate Now</a>
+<section id="donate" class="relative py-16 bg-gradient-to-b from-[#f7f9fc] to-[#e8edf5] overflow-hidden">
+    <div class="absolute top-0 left-0 w-64 h-64 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+    <div class="absolute -bottom-12 right-0 w-80 h-80 bg-indigo-200 rounded-full mix-blend-multiply filter blur-2xl opacity-15 animate-blob animation-delay-2000"></div>
 
-            <div class="mt-8 space-y-4">
-                <p class="text-gray-500 italic text-sm">“I feel proud to support this cause. Every rupee I give goes directly to helping children.” – <span class="font-semibold">Rohit S.</span></p>
-                <p class="text-gray-500 italic text-sm">“Transparent, trustworthy, and impactful. Donating here is the best decision I made.” – <span class="font-semibold">Ananya K.</span></p>
-            </div>
+    <div class="container mx-auto px-4 text-center relative z-10">
+        <h3 class="text-3xl sm:text-4xl font-extrabold text-[#1a237e] mb-4 leading-snug">
+            Give the Gift of Education
+        </h3>
+        <p class="text-gray-700 sm:text-base md:text-lg max-w-2xl mx-auto mb-8">
+            Support children from underprivileged backgrounds with quality education, mentorship, and a brighter future. Every contribution makes a lasting impact.
+        </p>
+
+        <div class="bg-white rounded-2xl shadow-xl max-w-lg mx-auto p-8 md:p-12">
+            <p class="text-gray-800 text-base md:text-lg mb-6">
+                Join thousands of donors in transforming lives. Your generosity empowers children to dream, learn, and thrive.
+            </p>
+            <a href="cause_details.php" 
+   class="w-full inline-flex items-center justify-center gap-3 bg-gradient-to-r from-[#fbbf24] via-[#fcd34d] to-[#fde68a] text-[#1a237e] font-semibold py-4 px-12 rounded-full shadow-md hover:shadow-xl hover:-translate-y-0.2 transition-all duration-300 text-base sm:text-lg relative overflow-hidden">
+   
+   <svg class="w-6 h-6 sm:w-7 sm:h-7 text-red-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 016.364 0L12 7.636l1.318-1.318a4.5 4.5 0 116.364 6.364L12 21.364 4.318 12.682a4.5 4.5 0 010-6.364z"/>
+   </svg>
+
+   Donate Now
+</a>
+
+
+            <div class="flex flex-col sm:flex-row justify-center items-center mt-6 gap-4 text-gray-600 text-sm md:text-base font-medium">
+
+    <!-- Secure Payments -->
+    <span class="flex items-center gap-2">
+        <svg class="w-6 h-6 sm:w-7 sm:h-7 text-green-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 11c1.657 0 3-1.343 3-3S13.657 5 12 5 9 6.343 9 8s1.343 3 3 3zM5 20c0-3.333 5-5 7-5s7 1.667 7 5H5z"/>
+        </svg>
+        100% Secure Payments
+    </span>
+
+    <!-- Powered by Razorpay -->
+    <span class="flex items-center gap-2">
+        <svg class="w-6 h-6 sm:w-7 sm:h-7 text-blue-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 10h18M3 6h18M3 14h18M3 18h18"/>
+        </svg>
+        Powered by Razorpay
+    </span>
+
+    <!-- Make a Lasting Impact -->
+    <span class="flex items-center gap-2">
+        <svg class="w-6 h-6 sm:w-7 sm:h-7 text-purple-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 21C12 21 5 13 5 8a7 7 0 0114 0c0 5-7 13-7 13z"/>
+        </svg>
+        Make a Lasting Impact
+    </span>
+
+</div>
+
+
+            <p class="text-gray-500 text-xs mt-4">
+                Donations are fully tax-deductible and go directly to educational programs. Transparency and accountability guaranteed.
+            </p>
         </div>
     </div>
 </section>
 
-    
+<style>
+@keyframes blob {
+  0%, 100% { transform: translate(0px, 0px) scale(1); }
+  33% { transform: translate(15px, -25px) scale(1.03); }
+  66% { transform: translate(-10px, 10px) scale(0.97); }
+}
+.animate-blob {
+  animation: blob 10s infinite;
+}
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+</style>
+
+
 <script>
 let currentSlide = 0;
 const slider = document.getElementById('testimonialSlider');
