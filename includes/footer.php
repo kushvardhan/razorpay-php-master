@@ -32,10 +32,10 @@
                     <div>
                         <h4 class="font-semibold mb-3">Follow Our Journey</h4>
                         <div class="flex gap-3">
-                            <a href="#" class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors">
+                            <a href="https://www.facebook.com/share/1ameNW6Wmn/"  target="_blank" class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors">
                                 <span class="text-white font-bold">f</span>
                             </a>
-                            <a href="#" class="w-10 h-10 bg-blue-400 rounded-full flex items-center justify-center hover:bg-blue-500 transition-colors">
+                            <a href="#"  target="_blank" class="w-10 h-10 bg-blue-400 rounded-full flex items-center justify-center hover:bg-blue-500 transition-colors">
                                 <span class="text-white font-bold">t</span>
                             </a>
                             <a href="#" class="w-10 h-10 bg-pink-600 rounded-full flex items-center justify-center hover:bg-pink-700 transition-colors">
