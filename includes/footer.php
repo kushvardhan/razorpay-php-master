@@ -23,7 +23,6 @@
                         </h4>
                         <div class="text-sm text-gray-300 space-y-1">
                             <p>Registered: 11th July 2014</p>
-                            <p>Deed No.: 61, Book No.: 4</p>
                             <p>Sub Registry Office, Darbhanga, Govt. of Bihar</p>
                             <p>Founder/Trustee: Md. Tabrizi (Sattler)</p>
                         </div>
