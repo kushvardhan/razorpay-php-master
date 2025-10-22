@@ -2,9 +2,15 @@
 session_start();
 require __DIR__ . '/razorpay/config.php';
 if (!isset($_SESSION['user_id'])) {
-    header('Location: /login.php?return_to=/payment.php');
+    header('Location: /charifit/login.php?return_to=/charifit/payment.php');
     exit;
 }
+
+$pdo = new PDO('mysql:host=' . DB_HOST . ';dbname=' . DB_NAME, DB_USER, DB_PASS);
+$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+$stmt = $pdo->prepare('SELECT name, email FROM users WHERE id = ?');
+$stmt->execute([$_SESSION['user_id']]);
+$user = $stmt->fetch(PDO::FETCH_ASSOC);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,43 +38,27 @@ if (!isset($_SESSION['user_id'])) {
     <main class="container mx-auto py-12">
         <div class="max-w-lg mx-auto bg-white p-8 rounded-lg shadow-lg">
             <h2 class="text-2xl font-bold text-[#1a237e] mb-4 text-center">Make a Donation</h2>
-            <p class="text-center text-sm text-gray-600 mb-6">All donations are processed securely via Razorpay. Your support makes a difference!</p>
+            <p class="text-center text-sm text-gray-600 mb-6">Hello <?= htmlspecialchars($user['name']) ?>! Choose your donation amount below.</p>
+            
+            <div class="mb-6">
+                <label class="block text-sm font-medium text-[#1a237e] mb-3">Quick Amount Selection</label>
+                <div class="grid grid-cols-2 gap-3 mb-4">
+                    <button type="button" onclick="setAmount(100)" class="preset-btn bg-yellow-100 text-[#1a237e] font-bold py-3 rounded-lg hover:bg-yellow-200 transition border-2 border-transparent">₹100</button>
+                    <button type="button" onclick="setAmount(500)" class="preset-btn bg-yellow-100 text-[#1a237e] font-bold py-3 rounded-lg hover:bg-yellow-200 transition border-2 border-transparent">₹500</button>
+                    <button type="button" onclick="setAmount(1000)" class="preset-btn bg-yellow-100 text-[#1a237e] font-bold py-3 rounded-lg hover:bg-yellow-200 transition border-2 border-transparent">₹1000</button>
+                    <button type="button" onclick="setAmount(1500)" class="preset-btn bg-yellow-100 text-[#1a237e] font-bold py-3 rounded-lg hover:bg-yellow-200 transition border-2 border-transparent">₹1500</button>
+                </div>
+            </div>
+
             <form id="donate-form" class="space-y-4">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
-                        <label class="block text-sm font-medium text-[#1a237e]">Name</label>
-                        <input type="text" id="donor-name" name="name" required class="w-full p-3 border border-yellow-400 rounded" placeholder="Your Name">
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-[#1a237e]">Email</label>
-                        <input type="email" id="donor-email" name="email" required class="w-full p-3 border border-yellow-400 rounded" placeholder="Your Email">
-                    </div>
-                </div>
                 <div>
-                    <label class="block text-sm font-medium text-[#1a237e]">Country</label>
-                    <input type="text" id="donor-country" name="country" required class="w-full p-3 border border-yellow-400 rounded" placeholder="Your Country">
-                </div>
-                <div class="grid grid-cols-2 gap-4">
-                    <div>
-                        <label class="block text-sm font-medium text-[#1a237e]">Amount</label>
-                        <input type="number" id="donation-amount" name="amount" min="1" required class="w-full p-3 border border-yellow-400 rounded" placeholder="Amount">
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-[#1a237e]">Currency</label>
-                        <select id="donation-currency" name="currency" class="w-full p-3 border border-yellow-400 rounded">
-                            <option value="INR" selected>INR</option>
-                            <option value="USD">USD</option>
-                            <option value="EUR">EUR</option>
-                        </select>
-                    </div>
+                    <label class="block text-sm font-medium text-[#1a237e]">Custom Amount (₹)</label>
+                    <input type="number" id="donation-amount" name="amount" min="100" required class="w-full p-3 border border-yellow-400 rounded" placeholder="Enter amount (minimum ₹100)">
+                    <p class="text-xs text-gray-500 mt-1">Minimum donation amount is ₹100</p>
                 </div>
                 <div>
                     <label class="block text-sm font-medium text-[#1a237e]">Message (optional)</label>
-                    <textarea id="donation-message" name="message" class="w-full p-3 border border-yellow-400 rounded" placeholder="Your message"></textarea>
-                </div>
-                <div class="flex items-center">
-                    <input type="checkbox" id="recurring" name="recurring" class="mr-2">
-                    <label for="recurring" class="text-sm text-[#1a237e]">Make this a recurring donation</label>
+                    <textarea id="donation-message" name="message" class="w-full p-3 border border-yellow-400 rounded" placeholder="Your message or dedication"></textarea>
                 </div>
                 <button type="submit" id="pay-btn" class="w-full bg-yellow-400 text-[#1a237e] font-bold py-3 rounded-full hover:bg-yellow-300 transition">Donate Now</button>
                 <div id="error-msg" class="text-red-500 text-sm mt-4 hidden"></div>
@@ -87,33 +77,37 @@ if (!isset($_SESSION['user_id'])) {
     </footer>
     <script>
     const razorKey = "<?php echo htmlspecialchars(RAZOR_KEY_ID); ?>";
+    const userName = "<?php echo htmlspecialchars($user['name']); ?>";
+    const userEmail = "<?php echo htmlspecialchars($user['email']); ?>";
+    
+    function setAmount(amount) {
+        document.getElementById('donation-amount').value = amount;
+        document.querySelectorAll('.preset-btn').forEach(btn => {
+            btn.classList.remove('border-[#1a237e]', 'bg-yellow-200');
+            btn.classList.add('border-transparent', 'bg-yellow-100');
+        });
+        event.target.classList.remove('border-transparent', 'bg-yellow-100');
+        event.target.classList.add('border-[#1a237e]', 'bg-yellow-200');
+    }
+    
     document.getElementById('donate-form').addEventListener('submit', async function(e) {
         e.preventDefault();
-        const name = document.getElementById('donor-name').value.trim();
-        const email = document.getElementById('donor-email').value.trim();
-        const country = document.getElementById('donor-country').value.trim();
-        const amount = document.getElementById('donation-amount').value;
-        const currency = document.getElementById('donation-currency').value;
+        const amount = parseInt(document.getElementById('donation-amount').value);
         const message = document.getElementById('donation-message').value.trim();
-        const recurring = document.getElementById('recurring').checked ? 1 : 0;
         const errorMsg = document.getElementById('error-msg');
         errorMsg.classList.add('hidden');
-        if (!name || !email || !country || !amount || isNaN(amount) || amount <= 0) {
-            errorMsg.textContent = 'Please fill all required fields and enter a valid amount.';
+        
+        if (!amount || isNaN(amount) || amount < 100) {
+            errorMsg.textContent = 'We appreciate your generosity, but the minimum donation amount is ₹100 to help us process donations efficiently.';
             errorMsg.classList.remove('hidden');
             return;
         }
+        
         try {
-            const res = await fetch('/create_order.php', {
+            const res = await fetch('/charifit/create_order.php', {
                 method: 'POST',
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-                body: 'amount=' + encodeURIComponent(amount) +
-                      '&currency=' + encodeURIComponent(currency) +
-                      '&name=' + encodeURIComponent(name) +
-                      '&email=' + encodeURIComponent(email) +
-                      '&country=' + encodeURIComponent(country) +
-                      '&message=' + encodeURIComponent(message) +
-                      '&recurring=' + encodeURIComponent(recurring)
+                body: 'amount=' + encodeURIComponent(amount) + '&message=' + encodeURIComponent(message)
             });
             if (!res.ok) throw new Error('Order creation failed');
             const data = await res.json();
@@ -125,16 +119,16 @@ if (!isset($_SESSION['user_id'])) {
             const options = {
                 key: razorKey,
                 amount: data.amount,
-                currency: currency,
+                currency: 'INR',
                 order_id: data.order_id,
-                name: name,
-                description: message,
+                name: 'Cambridge Public Education and Welfare Trust',
+                description: message || 'Donation to Cambridge Trust',
                 prefill: {
-                    name: name,
-                    email: email
+                    name: userName,
+                    email: userEmail
                 },
                 handler: function (response){
-                    fetch('/verify.php', {
+                    fetch('/charifit/verify.php', {
                         method: 'POST',
                         headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                         body: 'razorpay_payment_id=' + encodeURIComponent(response.razorpay_payment_id) +

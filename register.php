@@ -3,7 +3,7 @@
 session_set_cookie_params(86400);
 session_start();
 if (isset($_SESSION['user_id'])) {
-    header('Location: index.html');
+    header('Location: index.php');
     exit;
 }
 $error = '';
@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $stmt = $pdo->prepare('INSERT INTO users (name, email, password_hash, created_at) VALUES (?, ?, ?, NOW())');
             $stmt->execute([$name, $email, $hash]);
             $_SESSION['user_id'] = $pdo->lastInsertId();
-            header('Location: index.html');
+            header('Location: index.php');
             exit;
         }
     }
