@@ -36,7 +36,7 @@
                                 <span class="text-white font-bold">f</span>
                             </a>
                             <a href="#"  target="_blank" class="w-10 h-10 bg-blue-400 rounded-full flex items-center justify-center hover:bg-blue-500 transition-colors">
-                                <span class="text-white font-bold">t</span>
+                                <span class="text-white font-bold">x</span>
                             </a>
                             <a href="#" class="w-10 h-10 bg-pink-600 rounded-full flex items-center justify-center hover:bg-pink-700 transition-colors">
                                 <span class="text-white font-bold">i</span>
