@@ -8,7 +8,7 @@ use Razorpay\Api\Errors\SignatureVerificationError;
 session_set_cookie_params(86400);
 session_start();
 if (!isset($_SESSION['user_id'])) {
-    header('Location: /login.php?return_to=/payment.php');
+    header('Location: /charifit/login.php?return_to=/charifit/payment.php');
     exit;
 }
 
@@ -55,10 +55,11 @@ if ($payment_id && $order_id && $signature) {
             $user_name = $user['name'] ?? '';
 
             // Store info in session for success page
-            $_SESSION['success_message'] = "Hey $user_name, you have done the payment of ₹$amount to our charity. Thank you!";
+            $_SESSION['success_message'] = "Hey $user_name, you have done the payment of ₹" . ($amount/100) . " to our charity. Thank you!";
+            $_SESSION['payment_success'] = true;
 
-            // Do NOT log out user immediately. Session persists for 1 day.
-            header('Location: /success.html');
+            // Keep user logged in
+            header('Location: /charifit/success.php');
             exit;
             }
 
@@ -84,25 +85,24 @@ if ($payment_id && $order_id && $signature) {
             $user_name = $user['name'] ?? '';
 
             // Store info in session for success page
-            $_SESSION['success_message'] = "Hey $user_name, you have done the payment of ₹$amount to our charity. Thank you!";
+            $_SESSION['success_message'] = "Hey $user_name, you have done the payment of ₹" . ($amount/100) . " to our charity. Thank you!";
+            $_SESSION['payment_success'] = true;
 
-            // Log out user after payment
-            session_unset();
-            session_destroy();
-            header('Location: /success.html');
+            // Keep user logged in after payment
+            header('Location: /charifit/success.php');
             exit;
     } catch (SignatureVerificationError $e) {
         log_error('Signature verification failed: ' . $e->getMessage());
-        header('Location: /failure.html');
+        header('Location: /charifit/failure.php');
         exit;
     } catch (Exception $e) {
         log_error('Payment error: ' . $e->getMessage());
-        header('Location: /failure.html');
+        header('Location: /charifit/failure.php');
         exit;
     }
 } else {
     log_error('Missing required POST data');
-    header('Location: /failure.html');
+    header('Location: /charifit/failure.php');
     exit;
 }
 ?>

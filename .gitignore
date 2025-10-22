@@ -1,0 +1,37 @@
+# Environment and Config Files
+.env
+razorpay/config.php
+
+# Logs
+server.log
+*.log
+
+# Vendor Dependencies
+vendor/
+node_modules/
+
+# IDE Files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Temporary Files
+*.tmp
+*.temp
+
+# Cache Files
+*.cache
+
+# Database Files (if any)
+*.sql.backup
+*.db
+
+# Personal/Test Files
+test.php
+debug.php
+info.txt

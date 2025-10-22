@@ -5,13 +5,20 @@ use Razorpay\Api\Api;
 
 session_start();
 if (!isset($_SESSION['user_id'])) {
-    header('Location: /login.php?return_to=/payment.php');
+    header('Location: /charifit/login.php?return_to=/charifit/payment.php');
     exit;
 }
 
 $api = new Api(RAZOR_KEY_ID, RAZOR_KEY_SECRET);
 
 $amount_rupees = isset($_POST['amount']) ? intval($_POST['amount']) : 100;
+
+if ($amount_rupees < 100) {
+    http_response_code(400);
+    echo json_encode(['error' => 'Minimum donation amount is ₹100']);
+    exit;
+}
+
 $amount_paise = $amount_rupees * 100;
 
 try {

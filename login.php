@@ -3,7 +3,7 @@
 session_set_cookie_params(86400);
 session_start();
 if (isset($_SESSION['user_id'])) {
-    header('Location: index.html');
+    header('Location: index.php');
     exit;
 }
 $error = '';
@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
     if ($user && password_verify($password, $user['password_hash'])) {
         $_SESSION['user_id'] = $user['id'];
-        header('Location: ' . ($_GET['return_to'] ?? 'index.html'));
+        header('Location: ' . ($_GET['return_to'] ?? 'index.php'));
         exit;
     } else {
         $error = 'Invalid email or password.';
