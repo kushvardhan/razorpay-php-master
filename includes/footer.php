@@ -8,7 +8,7 @@
                         <img src="cpeduw-Photoroom.png" alt="Trust Logo" style="width: 80px; height: 80px;">
                         <div>
                             <h3 class="text-xl font-bold">Cambridge Trust</h3>
-                            <p class="text-gray-400 text-sm">Empowering Education, Enabling Futures</p>
+                            <p class="text-gray-400 text-sm">Public educational and welfare</p>
                         </div>
                     </div>
                     <p class="text-gray-300 mb-4 leading-relaxed">
