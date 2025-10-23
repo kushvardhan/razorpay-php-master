@@ -104,9 +104,338 @@ include 'includes/header.php';
   </div>
 </section>
 
+<!-- Key Programs & Activities Section -->
+<section class="py-16 sm:py-20 bg-gray-50">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-12 sm:mb-16">
+      <h3 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#1a237e] mb-4">
+        Our Key Programs & Activities
+      </h3>
+      <p class="text-gray-700 text-base sm:text-lg max-w-3xl mx-auto">
+        We work across multiple areas to create lasting social impact through education, healthcare, and community development.
+      </p>
+    </div>
+
+    <!-- Core Focus: Education and Health -->
+    <div class="mb-16">
+      <h4 class="text-2xl sm:text-3xl font-bold text-[#1a237e] mb-8 flex items-center gap-3">
+        <span class="w-1 h-10 bg-gradient-to-b from-blue-600 to-blue-400 rounded-full"></span>
+        Core Focus: Education & Health
+      </h4>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Education Card -->
+        <div class="bg-white rounded-2xl shadow-lg p-6 sm:p-8 hover:shadow-xl transition-all duration-300 border-l-4 border-blue-600">
+          <div class="flex items-center justify-center w-14 h-14 bg-blue-100 rounded-full mb-4">
+            <svg class="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C6.5 6.253 2 10.998 2 17s4.5 10.747 10 10.747c5.5 0 10-4.998 10-10.747S17.5 6.253 12 6.253z"/>
+            </svg>
+          </div>
+          <h5 class="text-xl font-bold text-[#1a237e] mb-3">Educational Development</h5>
+          <ul class="text-gray-700 space-y-2 text-sm sm:text-base">
+            <li class="flex items-start gap-2">
+              <span class="text-blue-600 font-bold mt-1">•</span>
+              <span>Establishing and maintaining schools, colleges & libraries</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-blue-600 font-bold mt-1">•</span>
+              <span>Running scholarship programs for meritorious students</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-blue-600 font-bold mt-1">•</span>
+              <span>Providing books, stipends & educational support</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Healthcare Card -->
+        <div class="bg-white rounded-2xl shadow-lg p-6 sm:p-8 hover:shadow-xl transition-all duration-300 border-l-4 border-green-600">
+          <div class="flex items-center justify-center w-14 h-14 bg-green-100 rounded-full mb-4">
+            <svg class="w-7 h-7 text-green-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <h5 class="text-xl font-bold text-[#1a237e] mb-3">Healthcare Infrastructure</h5>
+          <ul class="text-gray-700 space-y-2 text-sm sm:text-base">
+            <li class="flex items-start gap-2">
+              <span class="text-green-600 font-bold mt-1">•</span>
+              <span>Establishing hospitals & medical schools</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-green-600 font-bold mt-1">•</span>
+              <span>Supporting nursing institutions & dispensaries</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-green-600 font-bold mt-1">•</span>
+              <span>Child welfare & maternal health centers</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Special Needs Card -->
+        <div class="bg-white rounded-2xl shadow-lg p-6 sm:p-8 hover:shadow-xl transition-all duration-300 border-l-4 border-purple-600">
+          <div class="flex items-center justify-center w-14 h-14 bg-purple-100 rounded-full mb-4">
+            <svg class="w-7 h-7 text-purple-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M14 10h-2m0 0h-2m2 0v-2m0 2v2M7 20H4a1 1 0 01-1-1v-6a1 1 0 011-1h3m10 0h3a1 1 0 011 1v6a1 1 0 01-1 1h-3m0 0V9a2 2 0 00-2-2m0 0V7a2 2 0 00-2-2m0 0H9m0 0a2 2 0 00-2 2v2H5"/>
+            </svg>
+          </div>
+          <h5 class="text-xl font-bold text-[#1a237e] mb-3">Support for Special Needs</h5>
+          <ul class="text-gray-700 space-y-2 text-sm sm:text-base">
+            <li class="flex items-start gap-2">
+              <span class="text-purple-600 font-bold mt-1">•</span>
+              <span>Education for physically handicapped persons</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-purple-600 font-bold mt-1">•</span>
+              <span>Support for disabled & mentally challenged individuals</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-purple-600 font-bold mt-1">•</span>
+              <span>Comprehensive rehabilitation services</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Social Welfare & Outreach -->
+    <div class="mb-16">
+      <h4 class="text-2xl sm:text-3xl font-bold text-[#1a237e] mb-8 flex items-center gap-3">
+        <span class="w-1 h-10 bg-gradient-to-b from-orange-600 to-orange-400 rounded-full"></span>
+        Social Welfare & Outreach
+      </h4>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Women & Children Empowerment -->
+        <div class="bg-white rounded-2xl shadow-lg p-6 sm:p-8 hover:shadow-xl transition-all duration-300 border-l-4 border-pink-600">
+          <div class="flex items-center justify-center w-14 h-14 bg-pink-100 rounded-full mb-4">
+            <svg class="w-7 h-7 text-pink-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.354a4 4 0 110 5.292M15 21H3.623a.5.5 0 01-.5-.5V16a6 6 0 0112 0v4.5a.5.5 0 01-.5.5z"/>
+            </svg>
+          </div>
+          <h5 class="text-xl font-bold text-[#1a237e] mb-3">Women & Children Empowerment</h5>
+          <ul class="text-gray-700 space-y-2 text-sm sm:text-base">
+            <li class="flex items-start gap-2">
+              <span class="text-pink-600 font-bold mt-1">•</span>
+              <span>Vocational training programs for women</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-pink-600 font-bold mt-1">•</span>
+              <span>Child welfare & protection initiatives</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-pink-600 font-bold mt-1">•</span>
+              <span>Counseling & support centers</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Community Building -->
+        <div class="bg-white rounded-2xl shadow-lg p-6 sm:p-8 hover:shadow-xl transition-all duration-300 border-l-4 border-indigo-600">
+          <div class="flex items-center justify-center w-14 h-14 bg-indigo-100 rounded-full mb-4">
+            <svg class="w-7 h-7 text-indigo-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.856-1.487M15 10a3 3 0 11-6 0 3 3 0 016 0zM4.318 6.318a4.5 4.5 0 000 6.364M4.318 6.318L12 14.682m0 0L19.682 7m0 0a4.5 4.5 0 010 6.364m0 0L12 14.682"/>
+            </svg>
+          </div>
+          <h5 class="text-xl font-bold text-[#1a237e] mb-3">Community Building</h5>
+          <ul class="text-gray-700 space-y-2 text-sm sm:text-base">
+            <li class="flex items-start gap-2">
+              <span class="text-indigo-600 font-bold mt-1">•</span>
+              <span>Hostels & short-stay homes for vulnerable groups</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-indigo-600 font-bold mt-1">•</span>
+              <span>Rehabilitation centers & shelters</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-indigo-600 font-bold mt-1">•</span>
+              <span>Help line centers for women & children</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Labor & Worker Welfare -->
+        <div class="bg-white rounded-2xl shadow-lg p-6 sm:p-8 hover:shadow-xl transition-all duration-300 border-l-4 border-amber-600">
+          <div class="flex items-center justify-center w-14 h-14 bg-amber-100 rounded-full mb-4">
+            <svg class="w-7 h-7 text-amber-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+            </svg>
+          </div>
+          <h5 class="text-xl font-bold text-[#1a237e] mb-3">Labor & Worker Welfare</h5>
+          <ul class="text-gray-700 space-y-2 text-sm sm:text-base">
+            <li class="flex items-start gap-2">
+              <span class="text-amber-600 font-bold mt-1">•</span>
+              <span>Support for agricultural & industrial workers</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-amber-600 font-bold mt-1">•</span>
+              <span>Assistance for migrant laborers</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-amber-600 font-bold mt-1">•</span>
+              <span>Farmer welfare programs</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Relief & Disaster Response -->
+        <div class="bg-white rounded-2xl shadow-lg p-6 sm:p-8 hover:shadow-xl transition-all duration-300 border-l-4 border-red-600">
+          <div class="flex items-center justify-center w-14 h-14 bg-red-100 rounded-full mb-4">
+            <svg class="w-7 h-7 text-red-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4m0 4v.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <h5 class="text-xl font-bold text-[#1a237e] mb-3">Relief & Disaster Response</h5>
+          <ul class="text-gray-700 space-y-2 text-sm sm:text-base">
+            <li class="flex items-start gap-2">
+              <span class="text-red-600 font-bold mt-1">•</span>
+              <span>Emergency relief during natural calamities</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-red-600 font-bold mt-1">•</span>
+              <span>Flood, earthquake & famine relief measures</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-red-600 font-bold mt-1">•</span>
+              <span>Community disaster preparedness</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Health Awareness -->
+        <div class="bg-white rounded-2xl shadow-lg p-6 sm:p-8 hover:shadow-xl transition-all duration-300 border-l-4 border-teal-600">
+          <div class="flex items-center justify-center w-14 h-14 bg-teal-100 rounded-full mb-4">
+            <svg class="w-7 h-7 text-teal-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m7 0a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <h5 class="text-xl font-bold text-[#1a237e] mb-3">Health Awareness</h5>
+          <ul class="text-gray-700 space-y-2 text-sm sm:text-base">
+            <li class="flex items-start gap-2">
+              <span class="text-teal-600 font-bold mt-1">•</span>
+              <span>HIV/AIDS awareness & prevention programs</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-teal-600 font-bold mt-1">•</span>
+              <span>Communicable disease prevention</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-teal-600 font-bold mt-1">•</span>
+              <span>Public health education campaigns</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Rights & Equality -->
+        <div class="bg-white rounded-2xl shadow-lg p-6 sm:p-8 hover:shadow-xl transition-all duration-300 border-l-4 border-cyan-600">
+          <div class="flex items-center justify-center w-14 h-14 bg-cyan-100 rounded-full mb-4">
+            <svg class="w-7 h-7 text-cyan-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <h5 class="text-xl font-bold text-[#1a237e] mb-3">Rights & Equality</h5>
+          <ul class="text-gray-700 space-y-2 text-sm sm:text-base">
+            <li class="flex items-start gap-2">
+              <span class="text-cyan-600 font-bold mt-1">•</span>
+              <span>Human rights advocacy & promotion</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-cyan-600 font-bold mt-1">•</span>
+              <span>Fighting discrimination & injustice</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-cyan-600 font-bold mt-1">•</span>
+              <span>Fundamental freedom for all</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Advocacy & Environmental Work -->
+    <div>
+      <h4 class="text-2xl sm:text-3xl font-bold text-[#1a237e] mb-8 flex items-center gap-3">
+        <span class="w-1 h-10 bg-gradient-to-b from-green-600 to-green-400 rounded-full"></span>
+        Advocacy & Environmental Work
+      </h4>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Environmental Protection -->
+        <div class="bg-white rounded-2xl shadow-lg p-6 sm:p-8 hover:shadow-xl transition-all duration-300 border-l-4 border-emerald-600">
+          <div class="flex items-center justify-center w-14 h-14 bg-emerald-100 rounded-full mb-4">
+            <svg class="w-7 h-7 text-emerald-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+            </svg>
+          </div>
+          <h5 class="text-xl font-bold text-[#1a237e] mb-3">Environmental Protection</h5>
+          <ul class="text-gray-700 space-y-2 text-sm sm:text-base">
+            <li class="flex items-start gap-2">
+              <span class="text-emerald-600 font-bold mt-1">•</span>
+              <span>Forestation & plantation drives</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-emerald-600 font-bold mt-1">•</span>
+              <span>Waste land management</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-emerald-600 font-bold mt-1">•</span>
+              <span>Environmental conservation initiatives</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Social Justice -->
+        <div class="bg-white rounded-2xl shadow-lg p-6 sm:p-8 hover:shadow-xl transition-all duration-300 border-l-4 border-violet-600">
+          <div class="flex items-center justify-center w-14 h-14 bg-violet-100 rounded-full mb-4">
+            <svg class="w-7 h-7 text-violet-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <h5 class="text-xl font-bold text-[#1a237e] mb-3">Social Justice & Advocacy</h5>
+          <ul class="text-gray-700 space-y-2 text-sm sm:text-base">
+            <li class="flex items-start gap-2">
+              <span class="text-violet-600 font-bold mt-1">•</span>
+              <span>Fighting against injustice & social evils</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-violet-600 font-bold mt-1">•</span>
+              <span>Promoting democratic & fundamental rights</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-violet-600 font-bold mt-1">•</span>
+              <span>Advocacy for marginalized communities</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Arts & Culture -->
+        <div class="bg-white rounded-2xl shadow-lg p-6 sm:p-8 hover:shadow-xl transition-all duration-300 border-l-4 border-rose-600">
+          <div class="flex items-center justify-center w-14 h-14 bg-rose-100 rounded-full mb-4">
+            <svg class="w-7 h-7 text-rose-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <h5 class="text-xl font-bold text-[#1a237e] mb-3">Arts, Culture & Heritage</h5>
+          <ul class="text-gray-700 space-y-2 text-sm sm:text-base">
+            <li class="flex items-start gap-2">
+              <span class="text-rose-600 font-bold mt-1">•</span>
+              <span>Promoting Indian traditional arts & music</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-rose-600 font-bold mt-1">•</span>
+              <span>Supporting handicrafts & handlooms</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-rose-600 font-bold mt-1">•</span>
+              <span>Protecting national heritage & monuments</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="py-16 bg-gray-50">
   <div class="container mx-auto px-4 text-center">
-    <h3 class="text-3xl sm:text-4xl font-extrabold text-[#1a237e] mb-12">Our Projects</h3>
+    <h3 class="text-3xl sm:text-4xl font-extrabold text-[#1a237e] mb-12">Our Featured Projects</h3>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 

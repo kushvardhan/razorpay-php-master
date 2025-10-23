@@ -35,7 +35,7 @@ include 'includes/header.php';
             <img src="cpeduw-Photoroom.png" alt="Trust Logo" class="h-10 w-10 rounded-lg">
             <div>
                 <h1 class="text-lg font-bold">CAMBRIDGE PUBLIC EDUCATION AND WELFARE TRUST</h1>
-                <p class="text-yellow-400 text-xs">Vill. Jatpur, P.O.-Somra Baghla, P.S.-Moro, Dist.-Darbhanga, Bihar, India</p>
+                <p class="text-yellow-400 text-xs">Vill. Saidpur PO Sormar Baghala, P.S.-Moro, Dist.-Darbhanga, Bihar, India</p>
             </div>
         </div>
     </header>
@@ -61,7 +61,7 @@ include 'includes/header.php';
         <div class="container mx-auto text-center text-sm">
             <img src="cpeduw-Photoroom.png" alt="Trust Logo" class="h-8 w-8 mx-auto mb-2">
             <p>Registered: 11th July 2014 | Sub Registry Office, Darbhanga, Govt. of Bihar</p>
-            <p>Founder/Trustee: Md. Tabrizi (Sattler)</p>
+            <p>Founder/Trustee: Md. Tabrej (Sattler)</p>
             <p>&copy; <span id="year"></span> Cambridge Public Education and Welfare Trust. All rights reserved.</p>
         </div>
         <script>document.getElementById('year').textContent = new Date().getFullYear();</script>

@@ -48,10 +48,10 @@ include 'includes/header.php';
                     </div>
                     <div>
                         <h3 class="font-semibold text-[#1a237e] mb-2">Contact Information</h3>
-                        <p class="text-gray-700">Vill. Jatpur, P.O.-Somra Baghla</p>
+                        <p class="text-gray-700">Vill. Saidpur PO Sormar Baghala</p>
                         <p class="text-gray-700">P.S.-Moro, Dist.-Darbhanga</p>
                         <p class="text-gray-700">Bihar, India</p>
-                        <p class="text-gray-700">Founder/Trustee: Md. Tabrizi (Sattler)</p>
+                        <p class="text-gray-700">Founder/Trustee: Md. Tabrej (Sattler)</p>
                     </div>
                 </div>
             </div>
