@@ -12,7 +12,7 @@
                         </div>
                     </div>
                     <p class="text-gray-300 mb-4 leading-relaxed">
-                        We are a registered charitable trust dedicated to providing quality education and welfare support to underprivileged children in Bihar, India. Every donation directly impacts a child's future.
+                        We are a registered charitable trust dedicated to provide quality education and welfare support to underprivileged children in Bihar, India. Every donation directly impacts a child's future.
                     </p>
                     
                     <!-- Trust Credentials -->
@@ -24,7 +24,7 @@
                         <div class="text-sm text-gray-300 space-y-1">
                             <p>Registered: 11th July 2014</p>
                             <p>Sub Registry Office, Darbhanga, Govt. of Bihar</p>
-                            <p>Founder/Trustee: Md. Tabrizi (Sattler)</p>
+                            <p>Founder/Trustee: Md. Tabrej (Sattler)</p>
                         </div>
                     </div>
 
@@ -35,14 +35,9 @@
                             <a href="https://www.facebook.com/share/1ameNW6Wmn/"  target="_blank" class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors">
                                 <span class="text-white font-bold">f</span>
                             </a>
-                            <a href="#"  target="_blank" class="w-10 h-10 bg-blue-400 rounded-full flex items-center justify-center hover:bg-blue-500 transition-colors">
-                                <span class="text-white font-bold">x</span>
-                            </a>
-                            <a href="#" class="w-10 h-10 bg-pink-600 rounded-full flex items-center justify-center hover:bg-pink-700 transition-colors">
+                            
+                            <a href="https://www.instagram.com/cambridgewelfare?igsh=MThma3pzMjJjcjVkbw==" target="_blank" class="w-10 h-10 bg-pink-600 rounded-full flex items-center justify-center hover:bg-pink-700 transition-colors">
                                 <span class="text-white font-bold">i</span>
-                            </a>
-                            <a href="#" class="w-10 h-10 bg-blue-700 rounded-full flex items-center justify-center hover:bg-blue-800 transition-colors">
-                                <span class="text-white font-bold">in</span>
                             </a>
                         </div>
                     </div>
@@ -108,8 +103,8 @@
                             <div class="flex items-start gap-2">
                                 <span>📍</span>
                                 <div>
-                                    <p>Vill. Jatpur, P.O.-Somra Baghla</p>
-                                    <p>P.S.-Moro, Dist.-Darbhanga, Bihar</p>
+                                    <p>Vill. Saidpur PO Sormar Baghala</p>
+                                    <p>P.S.-Moro, Dist.-Darbhanga, Bihar - 847106</p>
                                 </div>
                             </div>
                             <div class="flex items-center gap-2">
@@ -118,7 +113,7 @@
                             </div>
                             <div class="flex items-center gap-2">
                                 <span>📞</span>
-                                <span>+91 98765 43210</span>
+                                <span>+91 9693387840</span>
                             </div>
                         </div>
                     </div>

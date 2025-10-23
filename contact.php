@@ -62,7 +62,7 @@ include 'includes/header.php';
         </svg>
         <div>
           <h3 class="font-semibold text-[#1a237e] text-lg">Address</h3>
-          <p class="text-gray-600">Vill. Jatpur, P.O.-Somra Baghla<br>P.S.-Moro, Dist.-Darbhanga<br>Bihar, India</p>
+          <p class="text-gray-600">Vill. Saidpur PO Sormar Baghala<br>P.S.-Moro, Dist.-Darbhanga<br>Bihar, India</p>
         </div>
       </div>
 
@@ -83,7 +83,7 @@ include 'includes/header.php';
         </svg>
         <div>
           <h3 class="font-semibold text-[#1a237e] text-lg">Phone</h3>
-          <p class="text-gray-600">+91 98765 43210</p>
+          <p class="text-gray-600">+91 9693387840</p>
         </div>
       </div>
     </div>
@@ -100,7 +100,7 @@ include 'includes/header.php';
       <p><strong>Registration Date:</strong> 11th July 2014</p>
       <p><strong>Registry Office:</strong> Sub Registry Office, Darbhanga</p>
       <p><strong>Government:</strong> Government of Bihar</p>
-      <p><strong>Founder/Trustee:</strong> Md. Tabrizi (Sattler)</p>
+      <p><strong>Founder/Trustee:</strong> Md. Tabrej (Sattler)</p>
     </div>
   </div>
 

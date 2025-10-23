@@ -8,5 +8,5 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <?= isset($extra_head) ? $extra_head : '' ?>
 </head>
-<body class="bg-gray-50 text-gray-900 pt-24">
+<body class="bg-gray-50 text-gray-900 pt-16 sm:pt-20 lg:pt-24">
     <?php include 'nav.php'; ?>
