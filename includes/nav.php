@@ -30,11 +30,11 @@ if (isset($_SESSION['user_id'])) {
       </div>
 
       <!-- Desktop Navigation - Hidden on mobile, visible on lg -->
-      <nav class="hidden lg:flex items-center gap-4 xl:gap-6">
-        <a href="index.php" class="text-gray-700 hover:text-blue-600 transition-colors font-medium text-sm xl:text-base">Home</a>
-        <a href="about.php" class="text-gray-700 hover:text-blue-600 transition-colors font-medium text-sm xl:text-base">About</a>
-        <a href="projects.php" class="text-gray-700 hover:text-blue-600 transition-colors font-medium text-sm xl:text-base">Our Work</a>
-        <a href="contact.php" class="text-gray-700 hover:text-blue-600 transition-colors font-medium text-sm xl:text-base">Contact</a>
+      <nav class="hidden lg:flex items-center gap-6 xl:gap-8">
+        <a href="index.php" class="text-gray-700 hover:text-blue-600 transition-colors font-semibold text-base lg:text-lg xl:text-xl">Home</a>
+        <a href="about.php" class="text-gray-700 hover:text-blue-600 transition-colors font-semibold text-base lg:text-lg xl:text-xl">About</a>
+        <a href="projects.php" class="text-gray-700 hover:text-blue-600 transition-colors font-semibold text-base lg:text-lg xl:text-xl">Our Work</a>
+        <a href="contact.php" class="text-gray-700 hover:text-blue-600 transition-colors font-semibold text-base lg:text-lg xl:text-xl">Contact</a>
       </nav>
 
       <!-- Desktop Donate Button & Sign In / Sign Up -->

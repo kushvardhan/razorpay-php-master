@@ -32,12 +32,14 @@
                     <div>
                         <h4 class="font-semibold mb-3">Follow Our Journey</h4>
                         <div class="flex gap-3">
-                            <a href="https://www.facebook.com/share/1ameNW6Wmn/"  target="_blank" class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors">
+                            <a href="https://www.facebook.com/share/1ameNW6Wmn/"  target="_blank" class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors">
                                 <span class="text-white font-bold">f</span>
                             </a>
-                            
                             <a href="https://www.instagram.com/cambridgewelfare?igsh=MThma3pzMjJjcjVkbw==" target="_blank" class="w-10 h-10 bg-pink-600 rounded-full flex items-center justify-center hover:bg-pink-700 transition-colors">
                                 <span class="text-white font-bold">i</span>
+                            </a>
+                            <a href="https://www.linkedin.com/in/md-tabrej-14b4bb111?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="w-10 h-10 bg-blue-800 rounded-full flex items-center justify-center hover:bg-blue-900 transition-colors">
+                                <span class="text-white font-bold">in</span>
                             </a>
                         </div>
                     </div>
@@ -70,7 +72,6 @@
                         <li><a href="#" class="text-gray-300 hover:text-white transition-colors flex items-center gap-2">
                             <span>→</span>
                             <span>FAQs</span>
-                        </a></li>
                     </ul>
                 </div>
 
