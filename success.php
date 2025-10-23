@@ -83,7 +83,7 @@ unset($_SESSION['success_message']);
         <div class="container mx-auto text-center text-sm">
             <img src="cpeduw-Photoroom.png" alt="Trust Logo" class="h-8 w-8 mx-auto mb-2">
             <p>Registered: 11th July 2014 | Sub Registry Office, Darbhanga, Govt. of Bihar</p>
-            <p>Founder/Trustee: Md. Tabrizi (Sattler)</p>
+            <p>Founder/Trustee: Md. Tabrej (Sattler)</p>
             <p>&copy; <?= date('Y') ?> Cambridge Public Education and Welfare Trust. All rights reserved.</p>
         </div>
     </footer>
