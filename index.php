@@ -108,18 +108,21 @@ include 'includes/header.php';
 </section>
 
 <!-- Key Programs & Activities Section -->
-<section class="py-16 sm:py-24 lg:py-32 bg-gradient-to-b from-white via-blue-50 to-white">
+<section class="py-16 sm:py-24 lg:py-32 bg-gradient-to-b from-white via-indigo-50 to-white">
   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
     <!-- Section Header -->
-    <div class="text-center mb-16 sm:mb-20 lg:mb-24">
-      <div class="inline-block mb-4">
-        <span class="inline-block px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-xs sm:text-sm font-semibold uppercase tracking-wider">Our Impact</span>
+    <div class="text-center mb-16 sm:mb-20 lg:mb-28">
+      <div class="inline-flex items-center gap-2 mb-6 px-4 py-2 bg-gradient-to-r from-blue-100 to-indigo-100 rounded-full">
+        <span class="w-2 h-2 bg-blue-600 rounded-full"></span>
+        <span class="text-xs sm:text-sm font-bold text-blue-700 uppercase tracking-widest">Our Impact & Mission</span>
+        <span class="w-2 h-2 bg-indigo-600 rounded-full"></span>
       </div>
-      <h2 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#1a237e] mb-6 leading-tight">
-        Our Key Programs <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">&</span> Activities
+      <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#1a237e] mb-4 sm:mb-6 leading-tight">
+        Our Key Programs <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600">&</span> Activities
       </h2>
-      <p class="text-gray-600 text-base sm:text-lg lg:text-xl max-w-3xl mx-auto leading-relaxed">
-        We work across multiple areas to create lasting social impact through education, healthcare, and community development. Every program is designed to empower and transform lives.
+      <div class="w-16 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full mx-auto mb-6"></div>
+      <p class="text-gray-600 text-sm sm:text-base md:text-lg lg:text-xl max-w-4xl mx-auto leading-relaxed">
+        We work across 12 comprehensive program areas to create lasting social impact through education, healthcare, and community development. Every initiative is designed to empower and transform lives.
       </p>
     </div>
 
@@ -132,76 +135,117 @@ include 'includes/header.php';
         </h3>
       </div>
 
-      <!-- Scrollable Container for Mobile -->
-      <div class="relative">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 overflow-x-auto lg:overflow-visible pb-4 lg:pb-0" id="programsScroll1">
+      <!-- Programs Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
         <!-- Education Card -->
-        <div class="group bg-white rounded-3xl shadow-lg hover:shadow-2xl p-6 sm:p-8 lg:p-10 transition-all duration-300 border-t-4 border-blue-600 hover:-translate-y-2 flex flex-col h-full">
-          <div class="flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-blue-100 to-blue-50 rounded-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
-            <svg class="w-8 h-8 sm:w-10 sm:h-10 text-blue-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+        <div class="group relative bg-white rounded-2xl shadow-md hover:shadow-2xl p-6 sm:p-8 transition-all duration-300 overflow-hidden flex flex-col h-full border border-gray-100 hover:border-blue-200">
+          <!-- Gradient Background on Hover -->
+          <div class="absolute inset-0 bg-gradient-to-br from-blue-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
+
+          <!-- Top Accent Bar -->
+          <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-600 to-blue-400"></div>
+
+          <!-- Icon Container -->
+          <div class="flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-blue-100 to-blue-50 rounded-xl mb-5 group-hover:scale-110 group-hover:shadow-lg transition-all duration-300 flex-shrink-0">
+            <svg class="w-7 h-7 sm:w-8 sm:h-8 text-blue-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3.042.525A9.006 9.006 0 002.25 9m14.25-9h.008v.008h-.008V6.042zM12 18a8.967 8.967 0 006-2.292m0 0A8.967 8.967 0 0021.75 9M3.75 9h.008v.008H3.75V9z"/>
             </svg>
           </div>
-          <h5 class="text-xl sm:text-2xl font-bold text-[#1a237e] mb-4">Educational Development</h5>
-          <ul class="text-gray-700 space-y-3 text-sm sm:text-base flex-grow">
-            <li class="flex items-start gap-3">
-              <span class="text-blue-600 font-bold text-lg mt-0.5 flex-shrink-0">✓</span>
+
+          <!-- Title -->
+          <h5 class="text-lg sm:text-xl font-bold text-[#1a237e] mb-3 group-hover:text-blue-600 transition-colors">Educational Development</h5>
+
+          <!-- Description -->
+          <p class="text-gray-600 text-xs sm:text-sm mb-4 leading-relaxed">Quality education and support for underprivileged children</p>
+
+          <!-- Content -->
+          <ul class="text-gray-700 space-y-2.5 text-xs sm:text-sm flex-grow">
+            <li class="flex items-start gap-2.5">
+              <span class="text-blue-600 font-bold text-base mt-0.5 flex-shrink-0">•</span>
               <span>Establishing and maintaining schools, colleges & libraries</span>
             </li>
-            <li class="flex items-start gap-3">
-              <span class="text-blue-600 font-bold text-lg mt-0.5 flex-shrink-0">✓</span>
+            <li class="flex items-start gap-2.5">
+              <span class="text-blue-600 font-bold text-base mt-0.5 flex-shrink-0">•</span>
               <span>Running scholarship programs for meritorious students</span>
             </li>
-            <li class="flex items-start gap-3">
-              <span class="text-blue-600 font-bold text-lg mt-0.5 flex-shrink-0">✓</span>
+            <li class="flex items-start gap-2.5">
+              <span class="text-blue-600 font-bold text-base mt-0.5 flex-shrink-0">•</span>
               <span>Providing books, stipends & educational support</span>
             </li>
           </ul>
         </div>
 
         <!-- Healthcare Card -->
-        <div class="group bg-white rounded-3xl shadow-lg hover:shadow-2xl p-6 sm:p-8 lg:p-10 transition-all duration-300 border-t-4 border-green-600 hover:-translate-y-2 flex flex-col h-full">
-          <div class="flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-green-100 to-green-50 rounded-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
-            <svg class="w-8 h-8 sm:w-10 sm:h-10 text-green-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+        <div class="group relative bg-white rounded-2xl shadow-md hover:shadow-2xl p-6 sm:p-8 transition-all duration-300 overflow-hidden flex flex-col h-full border border-gray-100 hover:border-green-200">
+          <!-- Gradient Background on Hover -->
+          <div class="absolute inset-0 bg-gradient-to-br from-green-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
+
+          <!-- Top Accent Bar -->
+          <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-green-600 to-green-400"></div>
+
+          <!-- Icon Container -->
+          <div class="flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-green-100 to-green-50 rounded-xl mb-5 group-hover:scale-110 group-hover:shadow-lg transition-all duration-300 flex-shrink-0">
+            <svg class="w-7 h-7 sm:w-8 sm:h-8 text-green-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/>
             </svg>
           </div>
-          <h5 class="text-xl sm:text-2xl font-bold text-[#1a237e] mb-4">Healthcare Infrastructure</h5>
-          <ul class="text-gray-700 space-y-3 text-sm sm:text-base flex-grow">
-            <li class="flex items-start gap-3">
-              <span class="text-green-600 font-bold text-lg mt-0.5 flex-shrink-0">✓</span>
+
+          <!-- Title -->
+          <h5 class="text-lg sm:text-xl font-bold text-[#1a237e] mb-3 group-hover:text-green-600 transition-colors">Healthcare Infrastructure</h5>
+
+          <!-- Description -->
+          <p class="text-gray-600 text-xs sm:text-sm mb-4 leading-relaxed">Comprehensive medical support and health services</p>
+
+          <!-- Content -->
+          <ul class="text-gray-700 space-y-2.5 text-xs sm:text-sm flex-grow">
+            <li class="flex items-start gap-2.5">
+              <span class="text-green-600 font-bold text-base mt-0.5 flex-shrink-0">•</span>
               <span>Establishing hospitals & medical schools</span>
             </li>
-            <li class="flex items-start gap-3">
-              <span class="text-green-600 font-bold text-lg mt-0.5 flex-shrink-0">✓</span>
+            <li class="flex items-start gap-2.5">
+              <span class="text-green-600 font-bold text-base mt-0.5 flex-shrink-0">•</span>
               <span>Supporting nursing institutions & dispensaries</span>
             </li>
-            <li class="flex items-start gap-3">
-              <span class="text-green-600 font-bold text-lg mt-0.5 flex-shrink-0">✓</span>
+            <li class="flex items-start gap-2.5">
+              <span class="text-green-600 font-bold text-base mt-0.5 flex-shrink-0">•</span>
               <span>Child welfare & maternal health centers</span>
             </li>
           </ul>
         </div>
 
         <!-- Special Needs Card -->
-        <div class="group bg-white rounded-3xl shadow-lg hover:shadow-2xl p-6 sm:p-8 lg:p-10 transition-all duration-300 border-t-4 border-purple-600 hover:-translate-y-2 flex flex-col h-full">
-          <div class="flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-purple-100 to-purple-50 rounded-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
-            <svg class="w-8 h-8 sm:w-10 sm:h-10 text-purple-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+        <div class="group relative bg-white rounded-2xl shadow-md hover:shadow-2xl p-6 sm:p-8 transition-all duration-300 overflow-hidden flex flex-col h-full border border-gray-100 hover:border-purple-200">
+          <!-- Gradient Background on Hover -->
+          <div class="absolute inset-0 bg-gradient-to-br from-purple-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
+
+          <!-- Top Accent Bar -->
+          <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-purple-600 to-purple-400"></div>
+
+          <!-- Icon Container -->
+          <div class="flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-purple-100 to-purple-50 rounded-xl mb-5 group-hover:scale-110 group-hover:shadow-lg transition-all duration-300 flex-shrink-0">
+            <svg class="w-7 h-7 sm:w-8 sm:h-8 text-purple-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m0 0l-2-1m2 1v2.5M14 4l-2 1m0 0L10 4m2 1v2.5M12 21v-8m0 0l-4-2m4 2l4-2"/>
             </svg>
           </div>
-          <h5 class="text-xl sm:text-2xl font-bold text-[#1a237e] mb-4">Support for Special Needs</h5>
-          <ul class="text-gray-700 space-y-3 text-sm sm:text-base flex-grow">
-            <li class="flex items-start gap-3">
-              <span class="text-purple-600 font-bold text-lg mt-0.5 flex-shrink-0">✓</span>
+
+          <!-- Title -->
+          <h5 class="text-lg sm:text-xl font-bold text-[#1a237e] mb-3 group-hover:text-purple-600 transition-colors">Support for Special Needs</h5>
+
+          <!-- Description -->
+          <p class="text-gray-600 text-xs sm:text-sm mb-4 leading-relaxed">Inclusive support for differently-abled individuals</p>
+
+          <!-- Content -->
+          <ul class="text-gray-700 space-y-2.5 text-xs sm:text-sm flex-grow">
+            <li class="flex items-start gap-2.5">
+              <span class="text-purple-600 font-bold text-base mt-0.5 flex-shrink-0">•</span>
               <span>Education for physically handicapped persons</span>
             </li>
-            <li class="flex items-start gap-3">
-              <span class="text-purple-600 font-bold text-lg mt-0.5 flex-shrink-0">✓</span>
+            <li class="flex items-start gap-2.5">
+              <span class="text-purple-600 font-bold text-base mt-0.5 flex-shrink-0">•</span>
               <span>Support for disabled & mentally challenged individuals</span>
             </li>
-            <li class="flex items-start gap-3">
-              <span class="text-purple-600 font-bold text-lg mt-0.5 flex-shrink-0">✓</span>
+            <li class="flex items-start gap-2.5">
+              <span class="text-purple-600 font-bold text-base mt-0.5 flex-shrink-0">•</span>
               <span>Comprehensive rehabilitation services</span>
             </li>
           </ul>
@@ -219,144 +263,162 @@ include 'includes/header.php';
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
         <!-- Women & Children Empowerment -->
-        <div class="group bg-white rounded-3xl shadow-lg hover:shadow-2xl p-6 sm:p-8 lg:p-10 transition-all duration-300 border-t-4 border-pink-600 hover:-translate-y-2 flex flex-col h-full">
-          <div class="flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-pink-100 to-pink-50 rounded-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
-            <svg class="w-8 h-8 sm:w-10 sm:h-10 text-pink-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+        <div class="group relative bg-white rounded-2xl shadow-md hover:shadow-2xl p-6 sm:p-8 transition-all duration-300 overflow-hidden flex flex-col h-full border border-gray-100 hover:border-pink-200">
+          <div class="absolute inset-0 bg-gradient-to-br from-pink-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
+          <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-pink-600 to-pink-400"></div>
+          <div class="flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-pink-100 to-pink-50 rounded-xl mb-5 group-hover:scale-110 group-hover:shadow-lg transition-all duration-300 flex-shrink-0">
+            <svg class="w-7 h-7 sm:w-8 sm:h-8 text-pink-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.354a4 4 0 110 5.292M15 21H3.623a.5.5 0 01-.5-.5V16a6 6 0 0112 0v4.5a.5.5 0 01-.5.5z"/>
             </svg>
           </div>
-          <h5 class="text-xl sm:text-2xl font-bold text-[#1a237e] mb-4">Women & Children Empowerment</h5>
-          <ul class="text-gray-700 space-y-3 text-sm sm:text-base flex-grow">
-            <li class="flex items-start gap-3">
-              <span class="text-pink-600 font-bold text-lg mt-0.5 flex-shrink-0">✓</span>
+          <h5 class="text-lg sm:text-xl font-bold text-[#1a237e] mb-3 group-hover:text-pink-600 transition-colors">Women & Children Empowerment</h5>
+          <p class="text-gray-600 text-xs sm:text-sm mb-4 leading-relaxed">Empowering women and protecting children</p>
+          <ul class="text-gray-700 space-y-2.5 text-xs sm:text-sm flex-grow">
+            <li class="flex items-start gap-2.5">
+              <span class="text-pink-600 font-bold text-base mt-0.5 flex-shrink-0">•</span>
               <span>Vocational training programs for women</span>
             </li>
-            <li class="flex items-start gap-3">
-              <span class="text-pink-600 font-bold text-lg mt-0.5 flex-shrink-0">✓</span>
+            <li class="flex items-start gap-2.5">
+              <span class="text-pink-600 font-bold text-base mt-0.5 flex-shrink-0">•</span>
               <span>Child welfare & protection initiatives</span>
             </li>
-            <li class="flex items-start gap-3">
-              <span class="text-pink-600 font-bold text-lg mt-0.5 flex-shrink-0">✓</span>
+            <li class="flex items-start gap-2.5">
+              <span class="text-pink-600 font-bold text-base mt-0.5 flex-shrink-0">•</span>
               <span>Counseling & support centers</span>
             </li>
           </ul>
         </div>
 
         <!-- Community Building -->
-        <div class="group bg-white rounded-3xl shadow-lg hover:shadow-2xl p-6 sm:p-8 lg:p-10 transition-all duration-300 border-t-4 border-indigo-600 hover:-translate-y-2 flex flex-col h-full">
-          <div class="flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-indigo-100 to-indigo-50 rounded-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
-            <svg class="w-8 h-8 sm:w-10 sm:h-10 text-indigo-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+        <div class="group relative bg-white rounded-2xl shadow-md hover:shadow-2xl p-6 sm:p-8 transition-all duration-300 overflow-hidden flex flex-col h-full border border-gray-100 hover:border-indigo-200">
+          <div class="absolute inset-0 bg-gradient-to-br from-indigo-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
+          <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-indigo-600 to-indigo-400"></div>
+          <div class="flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-indigo-100 to-indigo-50 rounded-xl mb-5 group-hover:scale-110 group-hover:shadow-lg transition-all duration-300 flex-shrink-0">
+            <svg class="w-7 h-7 sm:w-8 sm:h-8 text-indigo-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.856-1.487M15 10a3 3 0 11-6 0 3 3 0 016 0zM4.318 6.318a4.5 4.5 0 000 6.364M4.318 6.318L12 14.682m0 0L19.682 7m0 0a4.5 4.5 0 010 6.364m0 0L12 14.682"/>
             </svg>
           </div>
-          <h5 class="text-xl sm:text-2xl font-bold text-[#1a237e] mb-4">Community Building</h5>
-          <ul class="text-gray-700 space-y-3 text-sm sm:text-base flex-grow">
-            <li class="flex items-start gap-3">
-              <span class="text-indigo-600 font-bold text-lg mt-0.5 flex-shrink-0">✓</span>
+          <h5 class="text-lg sm:text-xl font-bold text-[#1a237e] mb-3 group-hover:text-indigo-600 transition-colors">Community Building</h5>
+          <p class="text-gray-600 text-xs sm:text-sm mb-4 leading-relaxed">Strengthening communities and social bonds</p>
+          <ul class="text-gray-700 space-y-2.5 text-xs sm:text-sm flex-grow">
+            <li class="flex items-start gap-2.5">
+              <span class="text-indigo-600 font-bold text-base mt-0.5 flex-shrink-0">•</span>
               <span>Hostels & short-stay homes for vulnerable groups</span>
             </li>
-            <li class="flex items-start gap-3">
-              <span class="text-indigo-600 font-bold text-lg mt-0.5 flex-shrink-0">✓</span>
+            <li class="flex items-start gap-2.5">
+              <span class="text-indigo-600 font-bold text-base mt-0.5 flex-shrink-0">•</span>
               <span>Rehabilitation centers & shelters</span>
             </li>
-            <li class="flex items-start gap-3">
-              <span class="text-indigo-600 font-bold text-lg mt-0.5 flex-shrink-0">✓</span>
+            <li class="flex items-start gap-2.5">
+              <span class="text-indigo-600 font-bold text-base mt-0.5 flex-shrink-0">•</span>
               <span>Help line centers for women & children</span>
             </li>
           </ul>
         </div>
 
         <!-- Labor & Worker Welfare -->
-        <div class="group bg-white rounded-3xl shadow-lg hover:shadow-2xl p-6 sm:p-8 lg:p-10 transition-all duration-300 border-t-4 border-amber-600 hover:-translate-y-2 flex flex-col h-full">
-          <div class="flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-amber-100 to-amber-50 rounded-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
-            <svg class="w-8 h-8 sm:w-10 sm:h-10 text-amber-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+        <div class="group relative bg-white rounded-2xl shadow-md hover:shadow-2xl p-6 sm:p-8 transition-all duration-300 overflow-hidden flex flex-col h-full border border-gray-100 hover:border-amber-200">
+          <div class="absolute inset-0 bg-gradient-to-br from-amber-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
+          <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-amber-600 to-amber-400"></div>
+          <div class="flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-amber-100 to-amber-50 rounded-xl mb-5 group-hover:scale-110 group-hover:shadow-lg transition-all duration-300 flex-shrink-0">
+            <svg class="w-7 h-7 sm:w-8 sm:h-8 text-amber-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/>
             </svg>
           </div>
-          <h5 class="text-xl sm:text-2xl font-bold text-[#1a237e] mb-4">Labor & Worker Welfare</h5>
-          <ul class="text-gray-700 space-y-3 text-sm sm:text-base flex-grow">
-            <li class="flex items-start gap-3">
-              <span class="text-amber-600 font-bold text-lg mt-0.5 flex-shrink-0">✓</span>
+          <h5 class="text-lg sm:text-xl font-bold text-[#1a237e] mb-3 group-hover:text-amber-600 transition-colors">Labor & Worker Welfare</h5>
+          <p class="text-gray-600 text-xs sm:text-sm mb-4 leading-relaxed">Supporting workers and farmers</p>
+          <ul class="text-gray-700 space-y-2.5 text-xs sm:text-sm flex-grow">
+            <li class="flex items-start gap-2.5">
+              <span class="text-amber-600 font-bold text-base mt-0.5 flex-shrink-0">•</span>
               <span>Support for agricultural & industrial workers</span>
             </li>
-            <li class="flex items-start gap-3">
-              <span class="text-amber-600 font-bold text-lg mt-0.5 flex-shrink-0">✓</span>
+            <li class="flex items-start gap-2.5">
+              <span class="text-amber-600 font-bold text-base mt-0.5 flex-shrink-0">•</span>
               <span>Assistance for migrant laborers</span>
             </li>
-            <li class="flex items-start gap-3">
-              <span class="text-amber-600 font-bold text-lg mt-0.5 flex-shrink-0">✓</span>
+            <li class="flex items-start gap-2.5">
+              <span class="text-amber-600 font-bold text-base mt-0.5 flex-shrink-0">•</span>
               <span>Farmer welfare programs</span>
             </li>
           </ul>
         </div>
 
         <!-- Relief & Disaster Response -->
-        <div class="group bg-white rounded-3xl shadow-lg hover:shadow-2xl p-6 sm:p-8 lg:p-10 transition-all duration-300 border-t-4 border-red-600 hover:-translate-y-2 flex flex-col h-full">
-          <div class="flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-red-100 to-red-50 rounded-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
-            <svg class="w-8 h-8 sm:w-10 sm:h-10 text-red-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+        <div class="group relative bg-white rounded-2xl shadow-md hover:shadow-2xl p-6 sm:p-8 transition-all duration-300 overflow-hidden flex flex-col h-full border border-gray-100 hover:border-red-200">
+          <div class="absolute inset-0 bg-gradient-to-br from-red-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
+          <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-red-600 to-red-400"></div>
+          <div class="flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-red-100 to-red-50 rounded-xl mb-5 group-hover:scale-110 group-hover:shadow-lg transition-all duration-300 flex-shrink-0">
+            <svg class="w-7 h-7 sm:w-8 sm:h-8 text-red-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4m0 4v.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
             </svg>
           </div>
-          <h5 class="text-xl sm:text-2xl font-bold text-[#1a237e] mb-4">Relief & Disaster Response</h5>
-          <ul class="text-gray-700 space-y-3 text-sm sm:text-base flex-grow">
-            <li class="flex items-start gap-3">
-              <span class="text-red-600 font-bold text-lg mt-0.5 flex-shrink-0">✓</span>
+          <h5 class="text-lg sm:text-xl font-bold text-[#1a237e] mb-3 group-hover:text-red-600 transition-colors">Relief & Disaster Response</h5>
+          <p class="text-gray-600 text-xs sm:text-sm mb-4 leading-relaxed">Emergency aid and disaster management</p>
+          <ul class="text-gray-700 space-y-2.5 text-xs sm:text-sm flex-grow">
+            <li class="flex items-start gap-2.5">
+              <span class="text-red-600 font-bold text-base mt-0.5 flex-shrink-0">•</span>
               <span>Emergency relief during natural calamities</span>
             </li>
-            <li class="flex items-start gap-3">
-              <span class="text-red-600 font-bold text-lg mt-0.5 flex-shrink-0">✓</span>
+            <li class="flex items-start gap-2.5">
+              <span class="text-red-600 font-bold text-base mt-0.5 flex-shrink-0">•</span>
               <span>Flood, earthquake & famine relief measures</span>
             </li>
-            <li class="flex items-start gap-3">
-              <span class="text-red-600 font-bold text-lg mt-0.5 flex-shrink-0">✓</span>
+            <li class="flex items-start gap-2.5">
+              <span class="text-red-600 font-bold text-base mt-0.5 flex-shrink-0">•</span>
               <span>Community disaster preparedness</span>
             </li>
           </ul>
         </div>
 
         <!-- Health Awareness -->
-        <div class="group bg-white rounded-3xl shadow-lg hover:shadow-2xl p-6 sm:p-8 lg:p-10 transition-all duration-300 border-t-4 border-teal-600 hover:-translate-y-2 flex flex-col h-full">
-          <div class="flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-teal-100 to-teal-50 rounded-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
-            <svg class="w-8 h-8 sm:w-10 sm:h-10 text-teal-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+        <div class="group relative bg-white rounded-2xl shadow-md hover:shadow-2xl p-6 sm:p-8 transition-all duration-300 overflow-hidden flex flex-col h-full border border-gray-100 hover:border-teal-200">
+          <div class="absolute inset-0 bg-gradient-to-br from-teal-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
+          <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-teal-600 to-teal-400"></div>
+          <div class="flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-teal-100 to-teal-50 rounded-xl mb-5 group-hover:scale-110 group-hover:shadow-lg transition-all duration-300 flex-shrink-0">
+            <svg class="w-7 h-7 sm:w-8 sm:h-8 text-teal-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m7 0a9 9 0 11-18 0 9 9 0 0118 0z"/>
             </svg>
           </div>
-          <h5 class="text-xl sm:text-2xl font-bold text-[#1a237e] mb-4">Health Awareness</h5>
-          <ul class="text-gray-700 space-y-3 text-sm sm:text-base flex-grow">
-            <li class="flex items-start gap-3">
-              <span class="text-teal-600 font-bold text-lg mt-0.5 flex-shrink-0">✓</span>
+          <h5 class="text-lg sm:text-xl font-bold text-[#1a237e] mb-3 group-hover:text-teal-600 transition-colors">Health Awareness</h5>
+          <p class="text-gray-600 text-xs sm:text-sm mb-4 leading-relaxed">Promoting health and wellness</p>
+          <ul class="text-gray-700 space-y-2.5 text-xs sm:text-sm flex-grow">
+            <li class="flex items-start gap-2.5">
+              <span class="text-teal-600 font-bold text-base mt-0.5 flex-shrink-0">•</span>
               <span>HIV/AIDS awareness & prevention programs</span>
             </li>
-            <li class="flex items-start gap-3">
-              <span class="text-teal-600 font-bold text-lg mt-0.5 flex-shrink-0">✓</span>
+            <li class="flex items-start gap-2.5">
+              <span class="text-teal-600 font-bold text-base mt-0.5 flex-shrink-0">•</span>
               <span>Communicable disease prevention</span>
             </li>
-            <li class="flex items-start gap-3">
-              <span class="text-teal-600 font-bold text-lg mt-0.5 flex-shrink-0">✓</span>
+            <li class="flex items-start gap-2.5">
+              <span class="text-teal-600 font-bold text-base mt-0.5 flex-shrink-0">•</span>
               <span>Public health education campaigns</span>
             </li>
           </ul>
         </div>
 
         <!-- Rights & Equality -->
-        <div class="group bg-white rounded-3xl shadow-lg hover:shadow-2xl p-6 sm:p-8 lg:p-10 transition-all duration-300 border-t-4 border-cyan-600 hover:-translate-y-2 flex flex-col h-full">
-          <div class="flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-cyan-100 to-cyan-50 rounded-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
-            <svg class="w-8 h-8 sm:w-10 sm:h-10 text-cyan-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+        <div class="group relative bg-white rounded-2xl shadow-md hover:shadow-2xl p-6 sm:p-8 transition-all duration-300 overflow-hidden flex flex-col h-full border border-gray-100 hover:border-cyan-200">
+          <div class="absolute inset-0 bg-gradient-to-br from-cyan-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
+          <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-cyan-600 to-cyan-400"></div>
+          <div class="flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-cyan-100 to-cyan-50 rounded-xl mb-5 group-hover:scale-110 group-hover:shadow-lg transition-all duration-300 flex-shrink-0">
+            <svg class="w-7 h-7 sm:w-8 sm:h-8 text-cyan-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
             </svg>
           </div>
-          <h5 class="text-xl sm:text-2xl font-bold text-[#1a237e] mb-4">Rights & Equality</h5>
-          <ul class="text-gray-700 space-y-3 text-sm sm:text-base flex-grow">
-            <li class="flex items-start gap-3">
-              <span class="text-cyan-600 font-bold text-lg mt-0.5 flex-shrink-0">✓</span>
+          <h5 class="text-lg sm:text-xl font-bold text-[#1a237e] mb-3 group-hover:text-cyan-600 transition-colors">Rights & Equality</h5>
+          <p class="text-gray-600 text-xs sm:text-sm mb-4 leading-relaxed">Promoting justice and equality</p>
+          <ul class="text-gray-700 space-y-2.5 text-xs sm:text-sm flex-grow">
+            <li class="flex items-start gap-2.5">
+              <span class="text-cyan-600 font-bold text-base mt-0.5 flex-shrink-0">•</span>
               <span>Human rights advocacy & promotion</span>
             </li>
-            <li class="flex items-start gap-3">
-              <span class="text-cyan-600 font-bold text-lg mt-0.5 flex-shrink-0">✓</span>
+            <li class="flex items-start gap-2.5">
+              <span class="text-cyan-600 font-bold text-base mt-0.5 flex-shrink-0">•</span>
               <span>Fighting discrimination & injustice</span>
             </li>
-            <li class="flex items-start gap-3">
-              <span class="text-cyan-600 font-bold text-lg mt-0.5 flex-shrink-0">✓</span>
+            <li class="flex items-start gap-2.5">
+              <span class="text-cyan-600 font-bold text-base mt-0.5 flex-shrink-0">•</span>
               <span>Fundamental freedom for all</span>
             </li>
           </ul>
@@ -374,72 +436,81 @@ include 'includes/header.php';
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
         <!-- Environmental Protection -->
-        <div class="group bg-white rounded-3xl shadow-lg hover:shadow-2xl p-6 sm:p-8 lg:p-10 transition-all duration-300 border-t-4 border-emerald-600 hover:-translate-y-2 flex flex-col h-full">
-          <div class="flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-emerald-100 to-emerald-50 rounded-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
-            <svg class="w-8 h-8 sm:w-10 sm:h-10 text-emerald-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+        <div class="group relative bg-white rounded-2xl shadow-md hover:shadow-2xl p-6 sm:p-8 transition-all duration-300 overflow-hidden flex flex-col h-full border border-gray-100 hover:border-emerald-200">
+          <div class="absolute inset-0 bg-gradient-to-br from-emerald-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
+          <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-emerald-600 to-emerald-400"></div>
+          <div class="flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-emerald-100 to-emerald-50 rounded-xl mb-5 group-hover:scale-110 group-hover:shadow-lg transition-all duration-300 flex-shrink-0">
+            <svg class="w-7 h-7 sm:w-8 sm:h-8 text-emerald-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/>
             </svg>
           </div>
-          <h5 class="text-xl sm:text-2xl font-bold text-[#1a237e] mb-4">Environmental Protection</h5>
-          <ul class="text-gray-700 space-y-3 text-sm sm:text-base flex-grow">
-            <li class="flex items-start gap-3">
-              <span class="text-emerald-600 font-bold text-lg mt-0.5 flex-shrink-0">✓</span>
+          <h5 class="text-lg sm:text-xl font-bold text-[#1a237e] mb-3 group-hover:text-emerald-600 transition-colors">Environmental Protection</h5>
+          <p class="text-gray-600 text-xs sm:text-sm mb-4 leading-relaxed">Protecting nature and environment</p>
+          <ul class="text-gray-700 space-y-2.5 text-xs sm:text-sm flex-grow">
+            <li class="flex items-start gap-2.5">
+              <span class="text-emerald-600 font-bold text-base mt-0.5 flex-shrink-0">•</span>
               <span>Forestation & plantation drives</span>
             </li>
-            <li class="flex items-start gap-3">
-              <span class="text-emerald-600 font-bold text-lg mt-0.5 flex-shrink-0">✓</span>
+            <li class="flex items-start gap-2.5">
+              <span class="text-emerald-600 font-bold text-base mt-0.5 flex-shrink-0">•</span>
               <span>Waste land management</span>
             </li>
-            <li class="flex items-start gap-3">
-              <span class="text-emerald-600 font-bold text-lg mt-0.5 flex-shrink-0">✓</span>
+            <li class="flex items-start gap-2.5">
+              <span class="text-emerald-600 font-bold text-base mt-0.5 flex-shrink-0">•</span>
               <span>Environmental conservation initiatives</span>
             </li>
           </ul>
         </div>
 
         <!-- Social Justice -->
-        <div class="group bg-white rounded-3xl shadow-lg hover:shadow-2xl p-6 sm:p-8 lg:p-10 transition-all duration-300 border-t-4 border-violet-600 hover:-translate-y-2 flex flex-col h-full">
-          <div class="flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-violet-100 to-violet-50 rounded-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
-            <svg class="w-8 h-8 sm:w-10 sm:h-10 text-violet-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+        <div class="group relative bg-white rounded-2xl shadow-md hover:shadow-2xl p-6 sm:p-8 transition-all duration-300 overflow-hidden flex flex-col h-full border border-gray-100 hover:border-violet-200">
+          <div class="absolute inset-0 bg-gradient-to-br from-violet-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
+          <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-violet-600 to-violet-400"></div>
+          <div class="flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-violet-100 to-violet-50 rounded-xl mb-5 group-hover:scale-110 group-hover:shadow-lg transition-all duration-300 flex-shrink-0">
+            <svg class="w-7 h-7 sm:w-8 sm:h-8 text-violet-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
             </svg>
           </div>
-          <h5 class="text-xl sm:text-2xl font-bold text-[#1a237e] mb-4">Social Justice & Advocacy</h5>
-          <ul class="text-gray-700 space-y-3 text-sm sm:text-base flex-grow">
-            <li class="flex items-start gap-3">
-              <span class="text-violet-600 font-bold text-lg mt-0.5 flex-shrink-0">✓</span>
+          <h5 class="text-lg sm:text-xl font-bold text-[#1a237e] mb-3 group-hover:text-violet-600 transition-colors">Social Justice & Advocacy</h5>
+          <p class="text-gray-600 text-xs sm:text-sm mb-4 leading-relaxed">Fighting injustice and promoting rights</p>
+          <ul class="text-gray-700 space-y-2.5 text-xs sm:text-sm flex-grow">
+            <li class="flex items-start gap-2.5">
+              <span class="text-violet-600 font-bold text-base mt-0.5 flex-shrink-0">•</span>
               <span>Fighting against injustice & social evils</span>
             </li>
-            <li class="flex items-start gap-3">
-              <span class="text-violet-600 font-bold text-lg mt-0.5 flex-shrink-0">✓</span>
+            <li class="flex items-start gap-2.5">
+              <span class="text-violet-600 font-bold text-base mt-0.5 flex-shrink-0">•</span>
               <span>Promoting democratic & fundamental rights</span>
             </li>
-            <li class="flex items-start gap-3">
-              <span class="text-violet-600 font-bold text-lg mt-0.5 flex-shrink-0">✓</span>
+            <li class="flex items-start gap-2.5">
+              <span class="text-violet-600 font-bold text-base mt-0.5 flex-shrink-0">•</span>
               <span>Advocacy for marginalized communities</span>
             </li>
           </ul>
         </div>
 
         <!-- Arts & Culture -->
-        <div class="group bg-white rounded-3xl shadow-lg hover:shadow-2xl p-6 sm:p-8 lg:p-10 transition-all duration-300 border-t-4 border-rose-600 hover:-translate-y-2 flex flex-col h-full">
-          <div class="flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-rose-100 to-rose-50 rounded-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
-            <svg class="w-8 h-8 sm:w-10 sm:h-10 text-rose-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+        <div class="group relative bg-white rounded-2xl shadow-md hover:shadow-2xl p-6 sm:p-8 transition-all duration-300 overflow-hidden flex flex-col h-full border border-gray-100 hover:border-rose-200">
+          <div class="absolute inset-0 bg-gradient-to-br from-rose-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
+          <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-rose-600 to-rose-400"></div>
+          <div class="flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-rose-100 to-rose-50 rounded-xl mb-5 group-hover:scale-110 group-hover:shadow-lg transition-all duration-300 flex-shrink-0">
+            <svg class="w-7 h-7 sm:w-8 sm:h-8 text-rose-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
             </svg>
           </div>
-          <h5 class="text-xl sm:text-2xl font-bold text-[#1a237e] mb-4">Arts, Culture & Heritage</h5>
-          <ul class="text-gray-700 space-y-3 text-sm sm:text-base flex-grow">
-            <li class="flex items-start gap-3">
-              <span class="text-rose-600 font-bold text-lg mt-0.5 flex-shrink-0">✓</span>
+          <h5 class="text-lg sm:text-xl font-bold text-[#1a237e] mb-3 group-hover:text-rose-600 transition-colors">Arts, Culture & Heritage</h5>
+          <p class="text-gray-600 text-xs sm:text-sm mb-4 leading-relaxed">Preserving cultural heritage</p>
+          <ul class="text-gray-700 space-y-2.5 text-xs sm:text-sm flex-grow">
+            <li class="flex items-start gap-2.5">
+              <span class="text-rose-600 font-bold text-base mt-0.5 flex-shrink-0">•</span>
               <span>Promoting Indian traditional arts & music</span>
             </li>
-            <li class="flex items-start gap-3">
-              <span class="text-rose-600 font-bold text-lg mt-0.5 flex-shrink-0">✓</span>
+            <li class="flex items-start gap-2.5">
+              <span class="text-rose-600 font-bold text-base mt-0.5 flex-shrink-0">•</span>
               <span>Supporting handicrafts & handlooms</span>
             </li>
-            <li class="flex items-start gap-3">
-              <span class="text-rose-600 font-bold text-lg mt-0.5 flex-shrink-0">✓</span>
+            <li class="flex items-start gap-2.5">
+              <span class="text-rose-600 font-bold text-base mt-0.5 flex-shrink-0">•</span>
               <span>Protecting national heritage & monuments</span>
             </li>
           </ul>
