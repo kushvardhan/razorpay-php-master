@@ -169,6 +169,18 @@
                 </div>
             </div>
         </div>
+
+        <div class="w-full flex justify-center mt-12 mb-4">
+  <a
+    href="https://kush-personal-portfolio-my-portfolio.vercel.app/"
+    target="_blank"
+    class="text-[13px] sm:text-sm text-gray-500 hover:text-green-400 transition-colors duration-300 text-center"
+  >
+    Designed & Developed with ❤️ by
+    <span 
+    title="kushvardhan39797@gmail.com" class="font-medium text-gray-200 hover:text-blue-400 cursor-pointer"> Kush</span>
+  </a>
+</div>
     </footer>
 </body>
 </html>
