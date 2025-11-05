@@ -135,10 +135,6 @@
                                 <span class="text-lg flex-shrink-0">📧</span>
                                 <span>info@cambridgetrust.org</span>
                             </div>
-                            <div class="flex items-center gap-2">
-                                <span class="text-lg flex-shrink-0">📞</span>
-                                <span>+91 9693387840</span>
-                            </div>
                         </div>
                     </div>
                 </div>
