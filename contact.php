@@ -76,16 +76,6 @@ include 'includes/header.php';
         </div>
       </div>
 
-      <div class="flex items-start space-x-4">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-[#ff6f00]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            d="M3 5h2l3.6 7.59L5.25 19a1 1 0 001.25 1.25L9 18h6l2.5 2.25A1 1 0 0019 19l-3.35-6.41L19 5h2" />
-        </svg>
-        <div>
-          <h3 class="font-semibold text-[#1a237e] text-lg">Phone</h3>
-          <p class="text-gray-600">+91 9693387840</p>
-        </div>
-      </div>
     </div>
   </div>
 
