@@ -70,7 +70,7 @@ include 'includes/header.php';
         <p class="text-gray-700 mb-2 font-medium">Cambridge Welfare Trust</p>
         <p class="text-gray-700 mb-1">Vill. Saidpur, PO Sormar Baghala</p>
         <p class="text-gray-700 mb-1">P.S. Moro, Dist. Darbhanga, Bihar - 847106</p>
-        <p class="text-gray-700">Email: <a href="mailto:info@cambridgewelfaretrust.org" class="text-amber-700 hover:underline">info@cambridgewelfaretrust.org</a></p>
+        <p class="text-gray-700">Email: <a href="mailto:cps4287@gmail.com" class="text-amber-700 hover:underline">cps4287@gmail.com</a></p>
       </div>
     </section>
   </div>
