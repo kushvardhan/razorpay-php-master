@@ -7,7 +7,7 @@
                     <div class="flex items-center gap-3 mb-6">
                         <img src="cpeduw-Photoroom.png" alt="Trust Logo" class="w-16 h-16 sm:w-20 sm:h-20 object-contain">
                         <div>
-                            <h3 class="text-lg sm:text-xl font-bold">Cambridge Trust</h3>
+                            <h3 class="text-lg sm:text-xl font-bold">Cambridge Welfare Trust</h3>
                             <p class="text-gray-400 text-xs sm:text-sm">Public Education & Welfare</p>
                         </div>
                     </div>
@@ -64,18 +64,35 @@
                             <span>→</span>
                             <span>How to Donate</span>
                         </a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors flex items-center gap-2 text-sm sm:text-base">
+                        <li><a href="contact.php" class="text-gray-300 hover:text-white transition-colors flex items-center gap-2 text-sm sm:text-base">
+                            <span>→</span>
+                            <span>Contact Us</span>
+                        </a></li>
+                    </ul>
+
+                    <!-- Policy Links -->
+                    <h4 class="font-semibold mb-6 text-lg">Policies</h4>
+                    <ul class="space-y-3">
+                        <li><a href="privacy-policy.php" class="text-gray-300 hover:text-white transition-colors flex items-center gap-2 text-sm sm:text-base">
                             <span>→</span>
                             <span>Privacy Policy</span>
                         </a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors flex items-center gap-2 text-sm sm:text-base">
+                        <li><a href="terms-and-conditions.php" class="text-gray-300 hover:text-white transition-colors flex items-center gap-2 text-sm sm:text-base">
                             <span>→</span>
                             <span>Terms & Conditions</span>
+                        </a></li>
+                        <li><a href="cancellation-refund-policy.php" class="text-gray-300 hover:text-white transition-colors flex items-center gap-2 text-sm sm:text-base">
+                            <span>→</span>
+                            <span>Refund Policy</span>
+                        </a></li>
+                        <li><a href="shipping-policy.php" class="text-gray-300 hover:text-white transition-colors flex items-center gap-2 text-sm sm:text-base">
+                            <span>→</span>
+                            <span>Shipping Policy</span>
                         </a></li>
                     </ul>
 
                     <!-- Certifications -->
-                    <h4 class="font-semibold mb-4 text-lg">Certifications</h4>
+                    <h4 class="font-semibold mt-3 mb-4 text-lg">Certifications</h4>
                     <div class="space-y-2 text-xs sm:text-sm">
                         <div class="flex items-center gap-2 text-green-400">
                             <span>✓</span>
@@ -109,12 +126,18 @@
                         <a href="cause_details.php" class="block bg-gradient-to-r from-red-500 to-pink-500 text-white text-center py-3 px-4 rounded-lg font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-200 mb-3 text-sm sm:text-base">
                             Donate Now
                         </a>
-                        <div class="flex flex-wrap gap-2 text-xs text-gray-400">
+                        <div class="flex flex-wrap gap-2 text-xs text-gray-400 mb-3">
                             <span>🔒 Secure</span>
                             <span>•</span>
                             <span>💳 All Cards</span>
                             <span>•</span>
                             <span>📋 Receipt</span>
+                        </div>
+                        <div class="bg-blue-900 bg-opacity-50 p-2 rounded text-xs text-blue-200 border border-blue-700">
+                            <p class="flex items-start gap-2">
+                                <span class="flex-shrink-0">🔐</span>
+                                <span>Payments processed securely via Razorpay</span>
+                            </p>
                         </div>
                     </div>
 
@@ -133,8 +156,13 @@
                             </div>
                             <div class="flex items-center gap-2">
                                 <span class="text-lg flex-shrink-0">📧</span>
-                                <span>info@cambridgetrust.org</span>
+                                <span>cps4287@gmail.com</span>
                             </div>
+                            <div class="flex items-center gap-2">
+  <span class="text-lg flex-shrink-0">📞</span>
+  <span>+91 96933 87840</span>
+</div>
+
                         </div>
                     </div>
                 </div>
@@ -166,15 +194,15 @@
             </div>
         </div>
 
-        <div class="w-full flex justify-center mt-12 mb-4">
+        <div class="w-full flex justify-center mt-4 pb-4">
   <a
     href="https://kush-personal-portfolio-my-portfolio.vercel.app/"
     target="_blank"
-    class="text-[13px] sm:text-sm text-gray-500 hover:text-green-400 transition-colors duration-300 text-center"
+    class="text-[13px] sm:text-sm text-gray-500 hover:text-gray-400 transition-colors duration-300 text-center"
   >
     Designed & Developed with ❤️ by
     <span 
-    title="kushvardhan39797@gmail.com" class="font-medium text-gray-200 hover:text-blue-400 cursor-pointer"> Kush</span>
+    title="kushvardhan39797@gmail.com" class="font-medium text-gray-300 hover:text-blue-500 cursor-pointer"> Kush</span>
   </a>
 </div>
     </footer>
