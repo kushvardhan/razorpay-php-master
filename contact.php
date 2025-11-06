@@ -72,9 +72,18 @@ include 'includes/header.php';
         </svg>
         <div>
           <h3 class="font-semibold text-[#1a237e] text-lg">Email</h3>
-          <p class="text-gray-600">info@cambridgetrust.org</p>
+          <p class="text-gray-600">cps4287@gmail.com</p>
         </div>
       </div>
+  <div class="flex items-start space-x-4">
+  <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#1976d2]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5.5a2.5 2.5 0 012.5-2.5h1A2.5 2.5 0 019 5.5v2a2.5 2.5 0 01-2.5 2.5H6a10.97 10.97 0 006 6h1a2.5 2.5 0 012.5 2.5v2a2.5 2.5 0 01-2.5 2.5h-1A17.5 17.5 0 013 5.5z" />
+  </svg>
+  <div>
+    <h3 class="font-semibold text-[#1a237e] text-lg">Phone</h3>
+    <p class="text-gray-600">+91 96933 87840</p>
+  </div>
+</div>
 
     </div>
   </div>
