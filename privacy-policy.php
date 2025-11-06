@@ -91,6 +91,11 @@ include 'includes/header.php';
                     <p class="mt-2">Email: 
                         <a href="mailto:cps4287@gmail.com" class="text-blue-600 hover:underline">cps4287@gmail.com</a>
                     </p>
+                    <p class="mt-2">
+  Phone: 
+  <a href="tel:9693387840" class="text-blue-600 hover:underline">+91 96933 87840</a>
+</p>
+
                 </div>
             </section>
         </div>
