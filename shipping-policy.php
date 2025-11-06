@@ -95,7 +95,7 @@ include 'includes/header.php';
                 <li class="relative pl-6">
                     <span class="absolute -left-3 top-0 bg-emerald-600 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs">2</span>
                     <h3 class="text-md font-semibold text-gray-800">Request physical copy (optional)</h3>
-                    <p class="text-gray-600 text-sm">Send a mail to <a href="mailto:info@cambridgewelfaretrust.org" class="text-emerald-600 hover:underline">info@cambridgewelfaretrust.org</a> with your transaction ID and address.</p>
+                    <p class="text-gray-600 text-sm">Send a mail to <a href="mailto:cps4287@gmail.com" class="text-emerald-600 hover:underline">cps4287@gmail.com</a> with your transaction ID and address.</p>
                 </li>
 
                 <li class="relative pl-6">
@@ -149,7 +149,7 @@ include 'includes/header.php';
                     <p>Vill. Saidpur, PO Sormar Baghala</p>
                     <p>P.S. Moro, Dist. Darbhanga, Bihar - 847106</p>
                 </div>
-                <a href="mailto:info@cambridgewelfaretrust.org" class="block text-center bg-emerald-600 text-white py-2 rounded-lg font-medium hover:bg-emerald-700 transition">Email: info@cambridgewelfaretrust.org</a>
+                <a href="mailto:cps4287@gmail.com" class="block text-center bg-emerald-600 text-white py-2 rounded-lg font-medium hover:bg-emerald-700 transition">Email: cps4287@gmail.com</a>
             </aside>
         </div>
 
@@ -158,7 +158,7 @@ include 'includes/header.php';
             <div class="bg-gradient-to-r from-emerald-600 to-teal-500 text-white px-6 py-8 sm:px-10 flex flex-col sm:flex-row items-center justify-between gap-4">
                 <div>
                     <h4 class="text-lg font-semibold">Want physical receipt or certificate?</h4>
-                    <p class="text-sm opacity-90">Send your transaction ID and address to <a href="mailto:info@cambridgewelfaretrust.org" class="underline">info@cambridgewelfaretrust.org</a> — we’ll confirm dispatch timeline.</p>
+                    <p class="text-sm opacity-90">Send your transaction ID and address to <a href="mailto:cps4287@gmail.com" class="underline">cps4287@gmail.com</a> — we’ll confirm dispatch timeline.</p>
                 </div>
                 <div>
                     <a href="contact-us.html" class="inline-block bg-white text-emerald-700 px-4 py-2 rounded-lg font-semibold hover:shadow-md transition">Contact Us</a>
