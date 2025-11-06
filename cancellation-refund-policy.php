@@ -63,7 +63,7 @@ include 'includes/header.php';
     <h2 class="text-3xl sm:text-4xl font-extrabold text-[#0d47a1] mb-4">4. Payment Issues</h2>
     <p class="text-gray-700 text-base sm:text-lg mb-4">
       If you face any payment-related issues, contact us at 
-      <a href="mailto:info@cambridgewelfaretrust.org" class="text-blue-700 font-medium hover:underline">info@cambridgewelfaretrust.org</a> with:
+      <a href="mailto:" class="text-blue-700 font-medium hover:underline"></a> with:
     </p>
     <ul class="list-disc list-inside space-y-2 pl-4 text-gray-700">
       <li>Transaction ID or Receipt Number</li>
@@ -95,7 +95,7 @@ include 'includes/header.php';
     <p class="text-gray-700">Vill. Saidpur, PO Sormar Baghala</p>
     <p class="text-gray-700">P.S. Moro, Dist. Darbhanga, Bihar – 847106</p>
     <p class="mt-3">Email: 
-      <a href="mailto:info@cambridgewelfaretrust.org" class="text-blue-700 hover:underline">info@cambridgewelfaretrust.org</a>
+      <a href="mailto:cps4287@gmail.com" class="text-blue-700 hover:underline">cps4287@gmail.com</a>
     </p>
   </section>
 
