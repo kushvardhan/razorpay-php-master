@@ -1,10 +1,12 @@
 # Environment and Config Files
 .env
 razorpay/config.php
-
+.env.example
 # Logs
 server.log
 *.log
+
+.gitignore
 
 # Vendor Dependencies
 vendor/
